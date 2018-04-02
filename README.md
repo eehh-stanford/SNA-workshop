@@ -7,7 +7,7 @@ This page has all the materials you will need for the workshop. We will update t
 These materials will guide you through installing the software needed for the workshop and the basics of R.
 
 - [Installing R](R-setup.md)
-- [Introduction to R](intro-R.html)
+- [Introduction to R](intro-R.md)
 
 ## Workshop materials
 
@@ -15,12 +15,12 @@ These are the topics we will cover in the workshop.
 
 - Network data collection for anthropologists (coming soon)
 - Introduction to network concepts and measures (coming soon)
-- [Introduction to igraph](intro-igraph.html)
-- [Introduction to ERGMs](intro-ergm.html)
+- Introduction to igraph (coming soon)
+- Introduction to ERGMs (coming soon)
 
 ## Additional resources
 
-- [ERGM predictions and GWESP](ergm-predictions.html)
+- ERGM predictions and GWESP (coming soon)
 
 
 ## About us
