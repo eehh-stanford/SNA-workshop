@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Getting started in R and RStudio"
-author: Elspeth Ready
-
+date: 2018-04-02
 ---
 
 # Getting started in R and RStudio
