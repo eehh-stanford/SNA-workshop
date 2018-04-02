@@ -1,15 +1,15 @@
-## Welcome!
+# Welcome!
 
 This page has all the materials you will need for the workshop. We will update the webpage as the workshop date approaches.
 
-### Pre-workshop materials
+## Pre-workshop materials
 
 These materials will guide you through installing the software needed for the workshop and the basics of R.
 
 - [Installing R](R-setup.md)
 - [Introduction to R](intro-R.html)
 
-### Workshop materials
+## Workshop materials
 
 These are the topics we will cover in the workshop.
 
@@ -18,12 +18,12 @@ These are the topics we will cover in the workshop.
 - [Introduction to igraph](intro-igraph.html)
 - [Introduction to ERGMs](intro-ergm.html)
 
-### Additional resources
+## Additional resources
 
 - [ERGM predictions and GWESP](ergm-predictions.html)
 
 
-### About us
+## About us
 
 [James Holland Jones](https://people.stanford.edu/jhj1/), Associate Professor, Stanford University
 
