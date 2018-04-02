@@ -8,7 +8,7 @@
 -   [Installing packages](#installing-packages)
 -   [Getting started in RStudio](#getting-started-in-rstudio)
 
-Back to [main page](README.md)
+Back to [main page](README.md).
 
 ### Installing R
 
