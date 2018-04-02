@@ -8,6 +8,8 @@
 -   [Installing packages](#installing-packages)
 -   [Getting started in RStudio](#getting-started-in-rstudio)
 
+Back to [main page](README.md)
+
 ### Installing R
 
 Go to the [R website](https://cran.r-project.org/mirrors.html) and choose the CRAN mirror closest to you. Choose your operating system and then download the most recent version of R (or whatever is appropriate if you have an older operating system). Install it on your computer as you would any other software program.
