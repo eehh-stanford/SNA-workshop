@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+## Welcome!
 
-You can use the [editor on GitHub](https://github.com/eehh-stanford/SNA_workshop/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This page has all the materials you will need for the workshop. We will update the webpage as the workshop date approaches.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Pre-workshop materials
 
-### Markdown
+These materials will guide you through installing the software needed for the workshop and the basics of R.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- [Installing R](R_setup.html)
+- [Introduction to R](intro-R.html)
 
-```markdown
-Syntax highlighted code block
+### Workshop materials
 
-# Header 1
-## Header 2
-### Header 3
+These are the topics we will cover in the workshop.
 
-- Bulleted
-- List
+- Network data collection for anthropologists (coming soon)
+- Introduction to network concepts and measures (coming soon)
+- [Introduction to igraph](intro-igraph.html)
+- [Introduction to ERGMs](intro-ergm.html)
 
-1. Numbered
-2. List
+### Additional resources
 
-**Bold** and _Italic_ and `Code` text
+- [ERGM predictions and GWESP](ergm-predictions.html)
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### About us
 
-### Jekyll Themes
+[James Holland Jones](https://people.stanford.edu/jhj1/), Associate Professor, Stanford University
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/eehh-stanford/SNA_workshop/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Elspeth Ready, Postdoctoral Research Associate, University of Nebraska-Lincoln
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[Ashley Hazel](https://anthropology.stanford.edu/people/ashley-hazel), Postdoctoral Scholar, Stanford University
