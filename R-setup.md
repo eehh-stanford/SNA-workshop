@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Getting started in R and RStudio"
+author: Elspeth Ready
+date: 2017-04-02
+---
+
 -   [Installing R](#installing-r)
 -   [Installing RStudio](#installing-rstudio)
 -   [More detailed instructions](#more-detailed-instructions)
