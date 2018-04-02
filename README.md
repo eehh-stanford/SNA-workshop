@@ -6,7 +6,7 @@ This page has all the materials you will need for the workshop. We will update t
 
 These materials will guide you through installing the software needed for the workshop and the basics of R.
 
-- [Installing R](R-setup.html)
+- [Installing R](R-setup.Rmd)
 - [Introduction to R](intro-R.html)
 
 ### Workshop materials
