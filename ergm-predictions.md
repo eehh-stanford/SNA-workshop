@@ -384,6 +384,12 @@ change_gwstat
     ## 5 2.048929 1.491328
     ## 6 2.048929 1.491328
     ## 7 7.270128 6.000000
+    
+``` r
+#histogram of GWESP change statistics
+hist(change_gwstat$gwesp) #not very interesting in this simple case
+```
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
 Amazing!
 
