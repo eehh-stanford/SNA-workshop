@@ -18,7 +18,7 @@ These are the topics we will cover in the workshop:
 - Introduction to igraph (coming soon)
 - Introduction to ERGMs (coming soon)
 
-You can download Bott's data for the ERGM tutorial [here](bott.RData)
+You can download Bott's data for the ERGM tutorial [here](bott.RData).
 
 ## Additional resources
 
