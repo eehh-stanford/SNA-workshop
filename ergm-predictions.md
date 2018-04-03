@@ -1,24 +1,26 @@
--   [ERGM predictions and GWESP](#ergm-predictions-and-gwesp)
-    -   [Generating ERGM predictions](#generating-ergm-predictions)
-    -   [Dealing with triangles](#dealing-with-triangles)
-        -   [The GWESP statistic](#the-gwesp-statistic)
-    -   [Thinking clearly about ESP](#thinking-clearly-about-esp)
-        -   [Adding a tie that closes no triangles](#adding-a-tie-that-closes-no-triangles)
-        -   [Adding a tie that closes one triangle](#adding-a-tie-that-closes-one-triangle)
-        -   [Adding a tie that closes one triangle, where nodes already have ESP](#adding-a-tie-that-closes-one-triangle-where-nodes-already-have-esp)
-        -   [Adding a tie that closes two triangles](#adding-a-tie-that-closes-two-triangles)
-    -   [A worked example](#a-worked-example)
-        -   [Calculating log-odds of ties that close triangles](#calculating-log-odds-of-ties-that-close-triangles)
-        -   [Calculating tie probabilities](#calculating-tie-probabilities)
-    -   [What about other GW\* terms?](#what-about-other-gw-terms)
-        -   [DGWESP](#dgwesp)
-        -   [GWDSP](#gwdsp)
-    -   [More realistic change statistics](#more-realistic-change-statistics)
 
 ERGM predictions and GWESP
 --------------------------
 
 *Elspeth Ready and Eleanor Power*
+
+-   [Generating ERGM predictions](#generating-ergm-predictions)
+-   [Dealing with triangles](#dealing-with-triangles)
+    -   [The GWESP statistic](#the-gwesp-statistic)
+-   [Thinking clearly about ESP](#thinking-clearly-about-esp)
+    -   [Adding a tie that closes no triangles](#adding-a-tie-that-closes-no-triangles)
+    -   [Adding a tie that closes one triangle](#adding-a-tie-that-closes-one-triangle)
+    -   [Adding a tie that closes one triangle, where nodes already have ESP](#adding-a-tie-that-closes-one-triangle-where-nodes-already-have-esp)
+    -   [Adding a tie that closes two triangles](#adding-a-tie-that-closes-two-triangles)
+-   [A worked example](#a-worked-example)
+    -   [Calculating log-odds of ties that close triangles](#calculating-log-odds-of-ties-that-close-triangles)
+    -   [Calculating tie probabilities](#calculating-tie-probabilities)
+-   [What about other GW\* terms?](#what-about-other-gw-terms)
+    -   [DGWESP](#dgwesp)
+    -   [GWDSP](#gwdsp)
+-   [More realistic change statistics](#more-realistic-change-statistics)
+
+Back to [main page](README.md).
 
 ### Generating ERGM predictions
 
