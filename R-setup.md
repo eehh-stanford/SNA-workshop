@@ -49,7 +49,7 @@ Manuals for these packages are available through CRAN ([igraph](https://cran.r-p
 
 In RStudio, create your own .R script file (File → New File → R Script). Type and save your code in the script file. To run a line of code, send it from the script to the console using `Ctrl+Enter` on your keyboard.
 
-Familiarize yourself with the basics of R by working through our next tutorial (Introduction to R.)
+Familiarize yourself with the basics of R by working through our next tutorial (Introduction to R)[intro-r.md]
 
 When closing RStudio, it will ask if you want to save the workspace---the answer is almost always "NO.''
 
