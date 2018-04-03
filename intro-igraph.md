@@ -1,3 +1,5 @@
+##Introduction to igraph
+
 -   [Getting Started](#getting-started)
 -   [Graphs](#graphs)
     -   [Some Definitions](#some-definitions)
@@ -15,8 +17,9 @@
 -   [Laying Out Graphs By Hand](#laying-out-graphs-by-hand)
 -   [Plotting Affiliation Graphs](#plotting-affiliation-graphs)
 
-Getting Started
-===============
+Back to [main page](README.md).
+
+### Getting Started
 
 -   `igraph` is a package that provides tools for the analysis and visualization of networks
 
@@ -24,11 +27,9 @@ Getting Started
 library(igraph)
 ```
 
-Graphs
-======
+### Graphs
 
-Some Definitions
-----------------
+#### Some Definitions
 
 Graph  
 Collection of vertices (or nodes) and undirected edges (or ties), denoted 𝒢(*V*, *E*), where *V* is a the vertex set and *E* is the edge set.
@@ -39,8 +40,7 @@ Collection of vertices (or nodes) and directed edges.
 Bipartite Graph  
 Graph where all the nodes of a graph can be partitioned into two sets 𝒱<sub>1</sub> and 𝒱<sub>2</sub> such that for all edges in the graph connects and unordered pair where one vertex comes from 𝒱<sub>1</sub> and the other from 𝒱<sub>2</sub>. Often called an "affiliation graph" as bipartite graphs are used to represent people's affiliations to organizations or events.
 
-From Graphs to People and Relationships
----------------------------------------
+#### From Graphs to People and Relationships
 
 -   The vertices of the graph represent the actors in the social system. These are usually individual people, but they could be households, geographical localities, institutions, or other social entities.
 
@@ -50,11 +50,9 @@ From Graphs to People and Relationships
 
 -   A graph (with no self-loops) with *n* vertices has ${n \\choose 2} = n(n-1)/2$ possible unordered pairs. This number (which can get very big!) is important for defining the density of a graph, i.e., the fraction of all possible relations that actually exist in a network.
 
-Various Ways to Specify Graphs in `igraph`
-==========================================
+### Various Ways to Specify Graphs in `igraph`
 
-Encoding a Graph by Hand
-------------------------
+#### Encoding a Graph by Hand
 
 -   Create a small, undirected graph of five vertices from a vector of vertex pairs
 
@@ -80,8 +78,7 @@ plot(g, vertex.shape="none", vertex.label.color="black")
 -   Make directed edges using `-+` where the plus indicates the direction of the arrow, i.e., `A --+ B` creates a directed edge from `A` to `B`
 -   A mutual edge can be created using `+-+`
 
-Special Graphs: Empty, Full, Ring
----------------------------------
+#### Special Graphs: Empty, Full, Ring
 
 -   I really don't like the current default color in igraph, so I set the vertex color for every plot
 
@@ -109,8 +106,7 @@ plot(g2, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-4-3.png)
 
-Special Graphs: Lattice, Tree, Star
------------------------------------
+#### Special Graphs: Lattice, Tree, Star
 
 ``` r
 # lattice
@@ -136,8 +132,7 @@ plot(g5, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-5-3.png)
 
-Special Graphs: Erdos-Renyi & Power-Law
----------------------------------------
+#### Special Graphs: Erdos-Renyi & Power-Law
 
 ``` r
 # Erdos-Renyi Random Graph
@@ -155,8 +150,7 @@ plot(g7, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-6-2.png)
 
-Putting Graphs Together
-=======================
+### Putting Graphs Together
 
 -   Sometimes you want to plot two (or more) graphs together
 -   The disjoint union operator allows you to merge two graphs with different vertex sets
@@ -167,8 +161,7 @@ plot(g4 %du% g7, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
-Rewiring
-========
+### Rewiring
 
 -   Rewiring means rearranging the ties in a graph. It randomizes the connections between nodes without changing the degree distribution
 
@@ -188,8 +181,7 @@ plot(gg, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-8-2.png)
 
-Vertex and Edge Attributes
-==========================
+### Vertex and Edge Attributes
 
 -   You can add arbitrary attributes to both vertices and edges. Generally, you do this to store information for plotting: colors, edge weights, names, etc.
 -   Some attributes are automatically created when you construct an graph object (e.g., "name" or "weight" if you load a weighted adjacency matrix)
@@ -230,8 +222,7 @@ plot(g4, vertex.size=10, vertex.label=NA, vertex.color=V(g4)$vertex.color,
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-9-1.png)
 
-Adjacency Matrices
-==================
+### Adjacency Matrices
 
 -   Most primatologists/behavioral ecologists probably have experience thinking in terms of adjacency matrices
 -   An example of an adjacency matrix is the pairwise interaction matrices (e.g., agonistic or affiliative interactions) that we construct from behavioral observations
@@ -261,8 +252,7 @@ plot(g,edge.width=log2(E(g)$weight)+1, layout=lay, vertex.color="lightblue")
 
 -   Edge Lists are much more efficient
 
-Community Structure
-===================
+### Community Structure
 
 -   Various algorithms for detecting clusters of similar vertices -- i.e., "communities"
 -   Use `fastgreedy.community()` to identify clusters in Kapferer's tailor shop and color the vertices based on their membership
@@ -292,8 +282,7 @@ plot(fg,G,vertex.label=NA)
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-11-2.png)
 
-Laying Out Graphs By Hand
-=========================
+### Laying Out Graphs By Hand
 
 -   The layout is of any given plot is random (e.g., plot the same graph repeatedly and you'll see that the layout changes with each plot)
 -   `igraph` provides a tool for tinkering with the layout called `tkplot()`
@@ -328,8 +317,7 @@ plot(g, layout=tri.coords, vertex.color="lightblue")
 
 ![](intro_igraph_files/figure-markdown_github/unnamed-chunk-12-2.png)
 
-Plotting Affiliation Graphs
-===========================
+### Plotting Affiliation Graphs
 
 ``` r
 davismat <- as.matrix(
