@@ -53,5 +53,3 @@ rhesus.layout <- layout.kamada.kawai(grhesus)
 plot(grhesus, edge.width=log10(E(grhesus)$weight)+1, vertex.label=V(grhesus)$name,
      vertex.color=as.numeric(V(grhesus)$sex=="F")+5, layout=rhesus.layout)
 ```
-
-![Rhesus grooming network](intro-r_files/figure-markdown_github/slade-1.png)
