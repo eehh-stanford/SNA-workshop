@@ -34,7 +34,7 @@ The key difference between generating predictions for ERGMs and traditional regr
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta(y)_{ij}=g(y_{ij}^{+})-g(y_{ij}^{-})"/>
 
-Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: <!--*p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>)--><img src="https://latex.codecogs.com/svg.latex?\Large&space;p=e^b/(1+e^b)"/>, where *b* is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
+Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: <!--*p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>)--><img src="https://latex.codecogs.com/svg.latex?\Large&space;p=e^b/(1+e^b)"/>, where <img src="https://latex.codecogs.com/svg.latex?\Large&space;b"/> is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
 
 ### Dealing with triangles
 
@@ -74,7 +74,7 @@ Adding the tie between *i* and *j* will add not just one but THREE ties with one
 So the change statistic will be:
 
 <!--*δ**w* = *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 3 − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 2 -->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^\alpha\big\{1-(1-e^{-\alpha})^1\big\}*3-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*2"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^\alpha\big\{1-(1-e^{-\alpha})^1\big\}*3-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*2"/>
 
 The first part of the equation above simplifies to 3. We show this with a hypothetical decay parameter of 0.25:
 
@@ -107,7 +107,7 @@ Here, pairs *ik*, *il*, and *kl* already all have one edgewise shared partner. A
 Now, because we're adding ties with different numbers of ESP, the summation term in the GWESP statistic will come into the calculation of the change statistic:
 
 <!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}}-->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^\alpha\bigg\{\big\{1- 1-e^{-\alpha})^1\big\}*1+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^\alpha\bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*1+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}"/>
 
 Let's evaluate this with *α* = 0.25:
 
@@ -141,12 +141,12 @@ So, closing two triangles adds one tie between nodes with 2 ESP and four ties be
 The full expression of the change statistic here is:
 
 <!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 4 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1} − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 4-->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^\alpha bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*4+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^{\alpha}bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*4+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
 
 Which simplifies to:
 
 <!--*δ**w* = 4 + *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>}-->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=4+e^\alpha\big\{1-(1-e^{-\alpha})^2\big\}"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=4+e^\alpha\big\{1-(1-e^{-\alpha})^2\big\}"/>
 
 With hypothetical *α* = 0.25, this works out to:
 
