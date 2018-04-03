@@ -627,7 +627,7 @@ head(quercus)
     ## 5         Quercus Prinus L. Atlantic  7646       10.5          24
     ## 6    Quercus stellata Wang. Atlantic 19938        2.5          17
 
-###The Workspace
+### The Workspace
 
 -   `R` handles data in a manner that is different than many statistical packages.
 -   In particular, you are not limited to a single rectangular data matrix at a time.
