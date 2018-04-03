@@ -1,10 +1,5 @@
----
-layout: post
-title: "Introduction to R"
-date: 2018-04-02
----
 
-# Introduction to `R`
+## Introduction to `R`
 
 -   [What Is R?](#what-is-r)
 -   [Why Use R?](#why-use-r)
