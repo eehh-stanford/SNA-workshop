@@ -30,11 +30,11 @@ Calculating predictions from an ERGM is basically the same as for logistic regre
 
 The key difference between generating predictions for ERGMs and traditional regression methods is in the values that are used to generate the predictions. In ERGMs, the effect of adding any tie to the network on a given network statistic is modelled using the change statistic, which is the difference in the network statistic before and after adding the tie:
 
-*δ*(*y*)<sub>*i**j*</sub> = *g*(*y*<sub>*i**j*</sub><sup>+</sup>)−*g*(*y*<sub>*i**j*</sub><sup>−</sup>)
+<!--*δ*(*y*)<sub>*i**j*</sub> = *g*(*y*<sub>*i**j*</sub><sup>+</sup>)−*g*(*y*<sub>*i**j*</sub><sup>−</sup>)-->
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta(y)_{ij}=g(y_{ij}^{+})-g(y_{ij}^{-})" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta(y)_{ij}=g(y_{ij}^{+})-g(y_{ij}^{-})"/>
 
-Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: *p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>), where *b* is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
+Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: <!--*p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>)--><img src="https://latex.codecogs.com/svg.latex?\Large&space;p=e^b/(1 + e^b)"/>, where *b* is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
 
 ### Dealing with triangles
 
@@ -48,7 +48,8 @@ The way that GWESP works can be difficult to understand, and the calculation of 
 
 The GWESP (Geometrically-Weighted Edgewise Shared Partnerships) statistic, which models triad closure, is calculated as follows (see [Hunter 2007](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2031865/)):
 
-$w = e^{\\alpha}{\\sum\\limits\_{i=1}^{n-2}}\\big\\{1-(1-e^{-\\alpha})^{i}\\big\\}p\_{i}$
+<!--$w = e^{\\alpha}{\\sum\\limits\_{i=1}^{n-2}}\\big\\{1-(1-e^{-\\alpha})^{i}\\big\\}p\_{i}$-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;w = e^{\alpha}{\sum\limits_{i=1}^{n-2}}\big\{1-(1-e^{-\alpha})^{i}\big\}p_{i}"/>
 
 Where *α* is the GWESP decay parameter, and *p*<sub>*i*</sub> is the number of actor pairs who have exactly *i* shared (edgewise) partners. *n* is the number of nodes in the network; the maximum number of edgewise-shared partners for any pair of nodes in the network is *n* − 2.
 
@@ -72,7 +73,8 @@ Adding the tie between *i* and *j* will add not just one but THREE ties with one
 
 So the change statistic will be:
 
-*δ**w* = *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 3 − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 2
+<!--*δ**w* = *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 3 − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 2 -->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta w = e^\alpha\big\{1-(1-e^{-\alpha})^1\big\}*3 - e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*2"/>
 
 The first part of the equation above simplifies to 3. We show this with a hypothetical decay parameter of 0.25:
 
@@ -100,11 +102,12 @@ The example above assumed that the nodes had no existing edgewise shared partner
 
 ![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-Here, pairs *i**k*, *i**l*, and *k**l* already all have one edgewise shared partner. Adding *i**j* will add two instances of one shared partner (for *i**j* and *j**l*), and will increase the ESP of *i**l* from one to two. This means that relative to the original graph, there is one additional ESP of one and one ESP of 2.
+Here, pairs *ik*, *il*, and *kl* already all have one edgewise shared partner. Adding *ij* will add two instances of one shared partner (for *ij* and *jl*), and will increase the ESP of *il* from one to two. This means that relative to the original graph, there is one additional ESP of one and one ESP of 2.
 
 Now, because we're adding ties with different numbers of ESP, the summation term in the GWESP statistic will come into the calculation of the change statistic:
 
-*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}}
+<!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}}-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta w = e^\alpha \bigg\{ \big\{ 1- (1-e^{-\alpha})^1\big\}*1 + \big\{1-(1-e^{-\alpha})^2\big\}*1 \bigg\}"/>
 
 Let's evaluate this with *α* = 0.25:
 
@@ -137,11 +140,13 @@ So, closing two triangles adds one tie between nodes with 2 ESP and four ties be
 
 The full expression of the change statistic here is:
 
-*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 4 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1} − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 4
+<!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 4 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1} − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 4-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta w = e^\alpha \bigg\{ \big\{ 1- (1-e^{-\alpha})^1\big\}*4 + \big\{1-(1-e^{-\alpha})^2\big\}*1 \bigg\} - e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
 
 Which simplifies to:
 
-*δ**w* = 4 + *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>}
+<!--*δ**w* = 4 + *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>}-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta w = 4 + e^\alpha\big\{1-(1-e^{-\alpha})^2\big\}-->
 
 With hypothetical *α* = 0.25, this works out to:
 
@@ -189,7 +194,7 @@ Voilà! The value they provide is 4.0.
 
 If we wish to get predictions for the probability of a tie, we'll need to consider all of the coefficients and convert the log-odds to probabilities. To illustrate this, we'll use the model coefficients presented in Table 2 of Goodreau et al. 2009.
 
-We'll consider three hypothetical ties: one between two male grade 8 students, who are both Asian, but that does not close a triangle; and similar ties that close one or two triangles. For all of these ties, the change statistic will be 1 for the "Edges" term, 2 for "Grade 8" and "Asian" nodecov terms, and 1 for "Grade 8 match," "Asian match," and "Sex match" nodematch terms. The GWESP change statistic for the tie that does not close a triangle will be zero. For the tie that closes one triangle, the GWESP change statistic will be 3, as demonstrated above. Finally, for the tie that closes two triangles, the GWESP change statistic will be 4 + *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} = 5.221, since *α* = 0.25 in this model. All other change statistics will be zero, and again, we assume that the nodes in these triangles have no other existing shared partners.
+We'll consider three hypothetical ties: one between two male grade 8 students, who are both Asian, but that does not close a triangle; and similar ties that close one or two triangles. For all of these ties, the change statistic will be 1 for the "Edges" term, 2 for "Grade 8" and "Asian" nodecov terms, and 1 for "Grade 8 match," "Asian match," and "Sex match" nodematch terms. The GWESP change statistic for the tie that does not close a triangle will be zero. For the tie that closes one triangle, the GWESP change statistic will be 3, as demonstrated above. Finally, for the tie that closes two triangles, the GWESP change statistic will be <img src="https://latex.codecogs.com/svg.latex?\Large&space;4 + e^\alpha\big\{1-(1-e^{-\alpha})^2\big\}"/> = 5.221, since *α* = 0.25 in this model. All other change statistics will be zero, and again, we assume that the nodes in these triangles have no other existing shared partners.
 
 | Model Term            |  Coefficient|  Change stat (no tri)|  Change stat (1 tri)|  Change stat (2 tri)|
 |:----------------------|------------:|---------------------:|--------------------:|--------------------:|
