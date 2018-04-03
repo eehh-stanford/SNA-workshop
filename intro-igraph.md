@@ -1,4 +1,4 @@
-##Introduction to igraph
+## Introduction to igraph
 
 -   [Getting Started](#getting-started)
 -   [Graphs](#graphs)
