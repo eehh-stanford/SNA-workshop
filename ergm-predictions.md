@@ -103,7 +103,7 @@ Here, pairs *ik*, *il*, and *kl* already all have one edgewise shared partner. A
 
 Now, because we're adding ties with different numbers of ESP, the summation term in the GWESP statistic will come into the calculation of the change statistic:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^\alpha\bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*1+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^{\alpha}\bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*1+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}"/>
 
 Let's evaluate this with *α* = 0.25:
 
@@ -383,7 +383,7 @@ change_gwstat
 #histogram of GWESP change statistics
 hist(change_gwstat$gwesp) #not very interesting in this simple case
 ```
-![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-20-1.png)
 
 Amazing!
 
