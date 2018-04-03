@@ -106,7 +106,6 @@ Here, pairs *ik*, *il*, and *kl* already all have one edgewise shared partner. A
 
 Now, because we're adding ties with different numbers of ESP, the summation term in the GWESP statistic will come into the calculation of the change statistic:
 
-<!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}}-->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^\alpha\bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*1+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}"/>
 
 Let's evaluate this with *α* = 0.25:
