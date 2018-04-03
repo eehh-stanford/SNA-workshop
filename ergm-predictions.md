@@ -64,7 +64,7 @@ Fortunately, if a tie being modelled would not close a triangle, then after addi
 
 The plot below helps illustrate the change in edgewise shared partnerships if a tie closes one triangle, assuming that no nodes in the group have any existing edgewise shared partnerships:
 
-![](ERGM_predictions_files/figure-markdown_github/unnamed-chunk-1-1.png)
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 Adding the tie between *i* and *j* will add not just one but THREE ties with one edgewise shared partnership to the network (*i* and *j* share partner *k*; *i* and *k* share partner *j*; *j* and *k* share partner *i*). Adding these ties also means "removing" two cases of a tie with zero shared partners (*i* ↔ *k* and *j* ↔ *k*).
 
@@ -96,7 +96,7 @@ So the change statistic for adding one triangle to the network is 3: three pairs
 
 The example above assumed that the nodes had no existing edgewise shared partners. What happens if nodes in the triangle to be closed already had some partners in common, as shown in the graph below?
 
-![](ERGM_predictions_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 Here, pairs *i**k*, *i**l*, and *k**l* already all have one edgewise shared partner. Adding *i**j* will add two instances of one shared partner (for *i**j* and *j**l*), and will increase the ESP of *i**l* from one to two. This means that relative to the original graph, there is one additional ESP of one and one ESP of 2.
 
@@ -118,7 +118,7 @@ The probability of a tie that closes a triangle where nodes in the triangle alre
 
 What about adding a tie that closes two triangles? Going back to our original assumption that none of the nodes have any edgewise shared partners, the plot below considers this scenario:
 
-![](ERGM_predictions_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 It's easier to think about this in a table:
 
@@ -273,7 +273,7 @@ plot(mynet,label=mynet %v% "vertex.names",coord=mnl)
 plot(mynet_with_ij,label=mynet_with_ij %v% "vertex.names",coord=mnl,edge.lty = c(1,1,1,1,1,1,2))
 ```
 
-![](ERGM_predictions_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![](ergm-predictions_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
 Now calculate the shared partner distributions using the summary function, and use these to extract the change statistics:
 
