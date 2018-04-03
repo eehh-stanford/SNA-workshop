@@ -2,11 +2,11 @@
 
 ## Getting started in R and RStudio
 
--   [Installing R](#installing-r)
+-   [Installing R](###installing-r)
 -   [Installing RStudio](#installing-rstudio)
--   [More detailed instructions](#more-detailed-instructions)
--   [Installing packages](#installing-packages)
--   [Getting started in RStudio](#getting-started-in-rstudio)
+-   [More detailed instructions](###more-detailed-instructions)
+-   [Installing packages](###installing-packages)
+-   [Getting started in RStudio](###getting-started-in-rstudio)
 
 Back to [main page](README.md).
 
