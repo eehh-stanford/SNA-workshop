@@ -1,5 +1,8 @@
+---
+title: Introduction to R
+---
 
-## Introduction to `R`
+## Introduction to R
 
 -   [What Is R?](#what-is-r)
 -   [Why Use R?](#why-use-r)
