@@ -30,8 +30,6 @@ Calculating predictions from an ERGM is basically the same as for logistic regre
 
 The key difference between generating predictions for ERGMs and traditional regression methods is in the values that are used to generate the predictions. In ERGMs, the effect of adding any tie to the network on a given network statistic is modelled using the change statistic, which is the difference in the network statistic before and after adding the tie:
 
-<!--*δ*(*y*)<sub>*i**j*</sub> = *g*(*y*<sub>*i**j*</sub><sup>+</sup>)−*g*(*y*<sub>*i**j*</sub><sup>−</sup>)-->
-
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta(y)_{ij}=g(y_{ij}^{+})-g(y_{ij}^{-})"/>
 
 Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: <!--*p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>)--><img src="https://latex.codecogs.com/svg.latex?\Large&space;p=e^b/(1+e^b)"/>, where <img src="https://latex.codecogs.com/svg.latex?\Large&space;b"/> is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
@@ -73,7 +71,6 @@ Adding the tie between *i* and *j* will add not just one but THREE ties with one
 
 So the change statistic will be:
 
-<!--*δ**w* = *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 3 − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 2 -->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=e^\alpha\big\{1-(1-e^{-\alpha})^1\big\}*3-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*2"/>
 
 The first part of the equation above simplifies to 3. We show this with a hypothetical decay parameter of 0.25:
@@ -139,12 +136,10 @@ So, closing two triangles adds one tie between nodes with 2 ESP and four ties be
 
 The full expression of the change statistic here is:
 
-<!--*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 4 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1} − *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>0</sup>} \* 4-->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^{\alpha}bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*4+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
 
 Which simplifies to:
 
-<!--*δ**w* = 4 + *e*<sup>*α*</sup>{1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>}-->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\delta}w=4+e^\alpha\big\{1-(1-e^{-\alpha})^2\big\}"/>
 
 With hypothetical *α* = 0.25, this works out to:
@@ -323,9 +318,9 @@ The change statistic for GWDSP here will simply be 6 because one DSP is added si
 
 ### More realistic change statistics
 
-In the examples we worked out above, we assumed that the nodes involved in the closure of triangles had no existing shared partners. However, in real networks, nodes in the network often have many existing shared edgewise partners. Consequently, a tie that closes a triangle where no nodes had existing edgewise shared partners (which we saw gives a GWESP change statistic of 3) is likely to give a high estimate for the probability that does not reflect a very likely scenario.
+In the examples we worked out above, we assumed that the nodes involved in the closure of triangles had no existing shared partners. However, in real networks, nodes in the network often have many existing shared edgewise partners. Consequently, a tie that closes a triangle where no nodes had existing edgewise shared partners (which we saw gives a GWESP change statistic of 3) is likely to give a high estimate for the tie probability that does not reflect a very likely scenario.
 
-In examining some of our own network data, we have found that ties that do not close triangles are the most common, followed by ties that add only one edgewise shared partnership to the network. For example, in the food sharing network analyzed by [Ready and Power (2018)](https://www.journals.uchicago.edu/doi/abs/10.1086/696018), 19.2% of ties were not involved in any triangles, and 10% of ties resulted in adding 1 ESP among previously disconnected nodes to the network. Consequently, we suggest that in generating tie probabilities, it may often be most appropriate to present tie probabilities for ties that do not close any traingles (GWESP change statistic = 0) and for ties that add only one edgewise shared partnership to the network (GWESP change statistic = 1). However, whether this suggestion is appropriate for any given network can, and should, be evaluated empirically.
+In examining some of our own network data, we have found that ties that do not close triangles are the most common, followed by ties that add only one edgewise shared partnership to the network. For example, in the food sharing network analyzed by [Ready and Power (2018)](https://www.journals.uchicago.edu/doi/abs/10.1086/696018), 19.2% of ties were not involved in any triangles, and 10% of ties lead to a GWESP change statistic of approximately 1. Consequently, we suggest that in generating tie probabilities, it may often be most appropriate to present predictions for ties that do not close any triangles (GWESP change statistic = 0) and for ties that effectively add only one edgewise shared partnership to the network (GWESP change statistic = 1). However, whether this suggestion is appropriate for any given network can, and should, be evaluated empirically.
 
 To do this, we can directly examine the effect of deleting ties from the network on the ESP and DSP distributions. We can also directly calculate the GWESP and GWDSP change statistics as a result of deleting ties:
 
