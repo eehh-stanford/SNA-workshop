@@ -136,7 +136,7 @@ So, closing two triangles adds one tie between nodes with 2 ESP and four ties be
 
 The full expression of the change statistic here is:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^{\alpha}bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*4+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\deltaw=e^{\alpha}\bigg\{\big\{1-(1-e^{-\alpha})^1\big\}*4+\big\{1-(1-e^{-\alpha})^2\big\}*1\bigg\}-e^\alpha\big\{1-(1-e^{-\alpha})^0\big\}*4"/>
 
 Which simplifies to:
 
