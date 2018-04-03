@@ -1,6 +1,3 @@
----
-title: "Introduction to R"
----
 
 ## Introduction to `R`
 
