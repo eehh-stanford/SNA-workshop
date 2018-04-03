@@ -102,7 +102,7 @@ Here, pairs *i**k*, *i**l*, and *k**l* already all have one edgewise shared part
 
 Now, because we're adding ties with different numbers of ESP, the summation term in the GWESP statistic will come into the calculation of the change statistic:
 
-*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}
+*δ**w* = *e*<sup>*α*</sup>{{1 − (1 − *e*<sup>−*α*</sup>)<sup>1</sup>} \* 1 + {1 − (1 − *e*<sup>−*α*</sup>)<sup>2</sup>} \* 1}}
 
 Let's evaluate this with *α* = 0.25:
 
