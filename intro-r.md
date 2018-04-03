@@ -1,5 +1,8 @@
 ---
-
+layout: post
+title: "Introduction to R"
+date: 2018-04-02
+---
 
 ## Introduction to `R`
 
