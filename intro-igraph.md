@@ -31,14 +31,11 @@ library(igraph)
 
 #### Some Definitions
 
-**Graph**  
-Collection of vertices (or nodes) and undirected edges (or ties), denoted 𝒢(*V*, *E*), where *V* is a the vertex set and *E* is the edge set.
+**Graph:** A collection of vertices (or nodes) and undirected edges (or ties), denoted 𝒢(*V*, *E*), where *V* is a the vertex set and *E* is the edge set.
 
-**Digraph (Directed Graph)**
-Collection of vertices (or nodes) and directed edges.
+**Digraph (Directed Graph):** A collection of vertices (or nodes) and directed edges.
 
-**Bipartite Graph** 
-Graph where all the nodes of a graph can be partitioned into two sets 𝒱<sub>1</sub> and 𝒱<sub>2</sub> such that for all edges in the graph connects and unordered pair where one vertex comes from 𝒱<sub>1</sub> and the other from 𝒱<sub>2</sub>. Often called an "affiliation graph" as bipartite graphs are used to represent people's affiliations to organizations or events.
+**Bipartite Graph:** Graph where all the nodes of a graph can be partitioned into two sets 𝒱<sub>1</sub> and 𝒱<sub>2</sub> such that for all edges in the graph connects and unordered pair where one vertex comes from 𝒱<sub>1</sub> and the other from 𝒱<sub>2</sub>. Often called an "affiliation graph" as bipartite graphs are used to represent people's affiliations to organizations or events.
 
 #### From Graphs to People and Relationships
 
