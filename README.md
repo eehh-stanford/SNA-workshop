@@ -11,12 +11,14 @@ These materials will guide you through installing the software needed for the wo
 
 ## Workshop materials
 
-These are the topics we will cover in the workshop.
+These are the topics we will cover in the workshop:
 
 - Network data collection for anthropologists (coming soon)
 - Introduction to network concepts and measures (coming soon)
 - Introduction to igraph (coming soon)
 - Introduction to ERGMs (coming soon)
+
+You can download the data for the ERGM tutorial [here](bott.Rdata).
 
 ## Additional resources
 
