@@ -26,7 +26,7 @@
 -   [Flow Control: `for`](#flow-control-for)
 -   [Using Packages](#using-packages)
 
-Back to [main page](README.md)
+Back to [main page](README.md).
 
 ### What Is R?
 
