@@ -9,7 +9,7 @@ title: Introduction to R
 -   [Wouldn't Something Menu-Driven Be Easier?](#wouldnt-something-menu-driven-be-easier)
 -   [Rhesus Monkey Grooming Network](#rhesus-monkey-grooming-network)
 -   [A Few Conventions and Other Helpful Bits](#a-few-conventions-and-other-helpful-bits)
--   [`R` as a Calculator](#r-as-a-calculator)
+-   [R as a Calculator](#r-as-a-calculator)
 -   [Data Types](#data-types)
 -   [Coercion](#coercion)
 -   [Creating Vectors](#creating-vectors)
