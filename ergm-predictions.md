@@ -32,6 +32,8 @@ The key difference between generating predictions for ERGMs and traditional regr
 
 *δ*(*y*)<sub>*i**j*</sub> = *g*(*y*<sub>*i**j*</sub><sup>+</sup>)−*g*(*y*<sub>*i**j*</sub><sup>−</sup>)
 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\delta(y)_{ij}=g(y_{ij}^{+})-g(y_{ij}^{-})" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
 Most change statistics are straightforward to calculate. Adding one edge, for example, gives an edge change statistic of 1, and the same for homophily terms: if the tie being modelled is homophilous, the change statistic is simply 1. To calculate predictions, we simply multiply the change statistic for each term by its coefficient, sum all these terms, and take the logistic: *p* = *e*<sup>*b*</sup>/(1 + *e*<sup>*b*</sup>), where *b* is the summation of the model coefficient estimates multiplied by the change statistics for each variable.
 
 ### Dealing with triangles
