@@ -33,6 +33,6 @@ You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData
 
 [James Holland Jones](https://people.stanford.edu/jhj1/), Associate Professor, Stanford University
 
-Elspeth Ready, Postdoctoral Research Associate, University of Nebraska-Lincoln
+[Elspeth Ready](https://elspethr.github.io/), Postdoctoral Research Associate, University of Nebraska-Lincoln
 
 [Ashley Hazel](https://anthropology.stanford.edu/people/ashley-hazel), Postdoctoral Scholar, Stanford University
