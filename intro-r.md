@@ -1,10 +1,10 @@
 
 ## Introduction to `R`
 
-- [What Is R?](#what-is-r)
-- [Why Use R?](#why-use-r)
-- [Wouldn't Something Menu-Driven Be Easier?](#wouldnt-something-menu-driven-be-easier)
-- [Rhesus Monkey Grooming Network](#rhesus-monkey-grooming-network)
+- [What Is R?](###what-is-r)
+- [Why Use R?](###why-use-r)
+- [Wouldn't Something Menu-Driven Be Easier?](###wouldnt-something-menu-driven-be-easier)
+- [Rhesus Monkey Grooming Network](###rhesus-monkey-grooming-network)
 
 Back to [main page](README.md).
 
