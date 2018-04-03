@@ -17,9 +17,9 @@ These materials will guide you through installing the software needed for the wo
 
 These are the topics we will cover in the workshop:
 
-- Network data collection for anthropologists (coming soon)
+- [Introduction to igraph](intro-igraph.md)
 - Introduction to network concepts and measures (coming soon)
-- Introduction to igraph (coming soon)
+- Network data collection for anthropologists (coming soon)
 - Introduction to ERGMs (coming soon)
 
 You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData).
@@ -27,6 +27,8 @@ You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData
 ## Additional resources
 
 - ERGM predictions and GWESP (coming soon)
+- [Syllabus for SNA course at Stanford](http://web.stanford.edu/class/ess360/Jones_ESS360_Syllabus_Spring2017.pdf), with extensive list of readings
+- [Links to various SNA resources](http://web.stanford.edu/class/ess360/Links/links.html)
 
 
 ## About us
