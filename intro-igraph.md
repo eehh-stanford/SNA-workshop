@@ -31,24 +31,22 @@ library(igraph)
 
 #### Some Definitions
 
-Graph  
+**Graph**  
 Collection of vertices (or nodes) and undirected edges (or ties), denoted 𝒢(*V*, *E*), where *V* is a the vertex set and *E* is the edge set.
 
-Digraph (Directed Graph)  
+**Digraph (Directed Graph)**
 Collection of vertices (or nodes) and directed edges.
 
-Bipartite Graph  
+**Bipartite Graph** 
 Graph where all the nodes of a graph can be partitioned into two sets 𝒱<sub>1</sub> and 𝒱<sub>2</sub> such that for all edges in the graph connects and unordered pair where one vertex comes from 𝒱<sub>1</sub> and the other from 𝒱<sub>2</sub>. Often called an "affiliation graph" as bipartite graphs are used to represent people's affiliations to organizations or events.
 
 #### From Graphs to People and Relationships
 
 -   The vertices of the graph represent the actors in the social system. These are usually individual people, but they could be households, geographical localities, institutions, or other social entities.
-
 -   The edges of the graph represent the relations between these entities (e.g., "is friends with" or "has sexual intercourse with" or "sends money to"). These edges can be directed undirected (e.g., "within 2 meters of") or directed (e.g., "sends money to"), in the case of a **digraph**.
-
 -   Graphs (and digraphs) can be binary (i.e., presence/absence of a relationship) or valued (e.g., "groomed five times in the observation period", "sent $100").
-
 -   A graph (with no self-loops) with *n* vertices has ${n \\choose 2} = n(n-1)/2$ possible unordered pairs. This number (which can get very big!) is important for defining the density of a graph, i.e., the fraction of all possible relations that actually exist in a network.
+
 
 ### Various Ways to Specify Graphs in `igraph`
 
@@ -62,7 +60,7 @@ g <- make_graph(c(1,2, 1,3, 2,3, 2,4, 3,5, 4,5), n=5, dir=FALSE)
 plot(g, vertex.color="lightblue")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-2-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-2-1.png)
 
 -   Create a small graph using `graph_from_literal()`
 -   Undirected edges are indicated with one or more dashes `-`, `--`, etc. It doesn't matter how many dashes you use -- you can use as many as you want to make your code more readable.
@@ -73,7 +71,7 @@ g <- graph_from_literal(Fred-Daphne:Velma-Shaggy, Fred-Shaggy-Scooby)
 plot(g, vertex.shape="none", vertex.label.color="black")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 -   Make directed edges using `-+` where the plus indicates the direction of the arrow, i.e., `A --+ B` creates a directed edge from `A` to `B`
 -   A mutual edge can be created using `+-+`
@@ -88,7 +86,7 @@ g0 <- make_empty_graph(20)
 plot(g0, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 ``` r
 # full graph
@@ -96,7 +94,7 @@ g1 <- make_full_graph(20)
 plot(g1, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-4-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-4-2.png)
 
 ``` r
 # ring
@@ -104,7 +102,7 @@ g2 <- make_ring(20)
 plot(g2, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-4-3.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-4-3.png)
 
 #### Special Graphs: Lattice, Tree, Star
 
@@ -114,7 +112,7 @@ g3 <- make_lattice(dimvector=c(10,10))
 plot(g3, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
 ``` r
 # tree
@@ -122,7 +120,7 @@ g4 <- make_tree(20, children = 3, mode = "undirected")
 plot(g4, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-5-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-5-2.png)
 
 ``` r
 # star
@@ -130,7 +128,7 @@ g5 <- make_star(20, mode="undirected")
 plot(g5, vertex.color="lightblue", vertex.size=10, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-5-3.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-5-3.png)
 
 #### Special Graphs: Erdos-Renyi & Power-Law
 
@@ -140,7 +138,7 @@ g6 <- sample_gnm(n=100,m=50)
 plot(g6, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 ``` r
 # Power Law
@@ -148,7 +146,7 @@ g7 <- sample_pa(n=100, power=1.5, m=1,  directed=FALSE)
 plot(g7, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-6-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-6-2.png)
 
 ### Putting Graphs Together
 
@@ -159,7 +157,7 @@ plot(g7, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 plot(g4 %du% g7, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
 ### Rewiring
 
@@ -171,7 +169,7 @@ gg <- rewire(gg, each_edge(prob = 0.3))
 plot(gg, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
 ``` r
 ## retain only the connected component
@@ -179,7 +177,7 @@ gg <- induced.subgraph(gg, subcomponent(gg,1))
 plot(gg, vertex.color="lightblue", vertex.size=5, vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-8-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-8-2.png)
 
 ### Vertex and Edge Attributes
 
@@ -220,7 +218,7 @@ plot(g4, vertex.size=10, vertex.label=NA, vertex.color=V(g4)$vertex.color,
      edge.color=E(g4)$edge.color, edge.width=3)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-9-1.png)
 
 ### Adjacency Matrices
 
@@ -242,7 +240,7 @@ lay <- layout_with_fr(g)
 plot(g,edge.width=log2(E(g)$weight)+1, layout=lay, vertex.color="lightblue")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-10-1.png)
 
 -   Adjacency matrices are actually very inefficient
 
@@ -273,14 +271,14 @@ plot(G, vertex.shape="none",
      edge.width=1, vertex.label.color=cols[fg$membership])
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-11-1.png)
 
 ``` r
 # another approach to visualizing
 plot(fg,G,vertex.label=NA)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-11-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-11-2.png)
 
 ### Laying Out Graphs By Hand
 
@@ -297,7 +295,7 @@ g <- graph( c(1,2, 2,3, 1,3), n=3, dir=FALSE)
 plot(g)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-12-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-12-1.png)
 
 ``` r
 #tkplot(g)
@@ -315,7 +313,7 @@ plot(g, vertex.color="lightblue")
 plot(g, layout=tri.coords, vertex.color="lightblue")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-12-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-12-2.png)
 
 ### Plotting Affiliation Graphs
 
@@ -330,7 +328,7 @@ V(southern)$color <- c(rep("blue",18), rep("red", 14))
 plot(southern, layout=layout.bipartite)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-13-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-13-1.png)
 
 ``` r
 ## not so beautiful
@@ -345,7 +343,7 @@ southern.layout <- cbind(x,y)
 plot(southern, layout=southern.layout)
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-13-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-13-2.png)
 
 -   The incidence matrix is *n* × *k*, where *n* is the number of actors and *k* is the number of events
 -   Project the incidence matrix *X* into social space, creating a sociomatrix *A*, **A** = **X** **X**<sup>*T*</sup>
@@ -401,7 +399,7 @@ gf2f <- simplify(gf2f)
 plot(gf2f, vertex.color="lightblue")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
 ``` r
 ## who is the most central?
@@ -410,7 +408,7 @@ cb <- betweenness(gf2f)
 plot(gf2f,vertex.label.cex=1+cb/2, vertex.shape="none")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-14-2.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-14-2.png)
 
 -   Project the matrix into event space
 
@@ -441,4 +439,4 @@ ge2e <- simplify(ge2e)
 plot(ge2e, vertex.color="lightblue")
 ```
 
-![](intro_igraph_files/figure-markdown_github/unnamed-chunk-15-1.png)
+![](intro-igraph_files/figure-markdown_github/unnamed-chunk-15-1.png)
