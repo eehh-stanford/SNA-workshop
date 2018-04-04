@@ -26,7 +26,7 @@ You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData
 
 ## Additional resources
 
-- ERGM predictions and GWESP<!--(ergm-predictions.md)-->
+- ERGM predictions and GWESP (coming soon)<!--(ergm-predictions.md)-->
 - [Syllabus for SNA course at Stanford](http://web.stanford.edu/class/ess360/Jones_ESS360_Syllabus_Spring2017.pdf), with extensive list of readings
 - [Links to various SNA resources](http://web.stanford.edu/class/ess360/Links/links.html)
 
