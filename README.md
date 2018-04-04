@@ -8,7 +8,7 @@ This page has all the materials you will need for the workshop. We will update t
 
 ## Pre-workshop materials
 
-These materials will guide you through installing the software needed for the workshop and the basics of R.
+These materials will guide you through installing the software needed for the workshop and help familiarize new users with the basics of R. **Please complete these before the workshop.** We also recommend starting to work through the [Introduction to igraph](intro-igraph.md) tutorial ahead of time.
 
 - [Installing R](R-setup.md)
 - [Introduction to R](intro-r.md)
@@ -26,7 +26,7 @@ You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData
 
 ## Additional resources
 
-- [ERGM predictions and GWESP](ergm-predictions.md)
+- ERGM predictions and GWESP<!--(ergm-predictions.md)-->
 - [Syllabus for SNA course at Stanford](http://web.stanford.edu/class/ess360/Jones_ESS360_Syllabus_Spring2017.pdf), with extensive list of readings
 - [Links to various SNA resources](http://web.stanford.edu/class/ess360/Links/links.html)
 
