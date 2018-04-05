@@ -318,7 +318,7 @@ The change statistic for GWDSP here will simply be 6 because one DSP is added si
 
 ### More realistic change statistics
 
-In the examples we worked out above, we assumed that the nodes involved in the closure of triangles had no existing shared partners. However, in real networks, nodes in the network often have many existing shared edgewise partners. Consequently, a tie that closes a triangle where no nodes had existing edgewise shared partners (which we saw gives a GWESP change statistic of 3) is likely to give a high estimate for the tie probability that does not reflect a very likely scenario.
+In the examples we worked out above, we assumed that the nodes involved in the closure of triangles had no existing shared partners. However, in real networks, nodes in the network often have many existing shared edgewise partners. Consequently, a tie that closes a triangle where no nodes had existing edgewise shared partners (which we saw gives a GWESP change statistic of 3) is will give an estimate for the tie probability that does not reflect a very likely scenario.
 
 In examining some of our own network data, we have found that ties that do not close triangles are the most common, followed by ties that add only one edgewise shared partnership to the network. For example, in the food sharing network analyzed by [Ready and Power (2018)](https://www.journals.uchicago.edu/doi/abs/10.1086/696018), 19.2% of ties were not involved in any triangles, and 10% of ties lead to a GWESP change statistic of approximately 1. Consequently, we suggest that in generating tie probabilities, it may often be most appropriate to present predictions for ties that do not close any triangles (GWESP change statistic = 0) and for ties that effectively add only one edgewise shared partnership to the network (GWESP change statistic = 1). However, whether this suggestion is appropriate for any given network can, and should, be evaluated empirically.
 
@@ -331,7 +331,7 @@ alpha <- 0.25 #the alpha value(s) from your ERGM
 
 #create empty data frame to hold result
 change_gwstat <- data.frame(gwesp=rep(0,p), gwdsp=rep(0,p))
-change_spcount<-as.data.frame(matrix(nrow=p, ncol=2+2*(n-2)))
+change_spcount<-as.data.frame(matrix(nrow=p, ncol=2+2*(n-2))) #columns for all POSSIBLE numbers of SP in the network. The ACTUAL max. number of SP will be much less than this in most cases; unless network density is very high.
 colnames(change_spcount)<-c(paste(0:(n-2), "ESP", sep=""), paste(0:(n-2), "DSP", sep=""))
 
 #calculate network values with all ties
