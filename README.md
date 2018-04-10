@@ -20,7 +20,7 @@ These are the topics we will cover in the workshop:
 - [Introduction to igraph](intro-igraph.md)
 - Introduction to network concepts and measures (coming soon)
 - Network data collection for anthropologists (coming soon)
-- Introduction to ERGMs (coming soon)
+- [Introduction to ERGMs](ergm-intro.md)
 
 You can download Bott's data for the ERGM tutorial by [clicking here](bott.RData).
 
