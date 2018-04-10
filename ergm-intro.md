@@ -68,9 +68,9 @@ where <img src="https://latex.codecogs.com/svg.latex?\Large&space;\theta"/>  is 
 
 The ergm equation can be re-written in terms of change statistics. The log-odds of a tie <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}"/> is:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;logit(Y_{ij})=1|y_{ij}^{c}=\theta^{T}\delta(y_{ij}"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;logit(Y_{ij}=1|y_{ij}^{c})=\theta^{T}\delta(y_{ij})"/>
 
-(Why is the <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y"/> capitalized? because we are looking at the random variable <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y_{ij}"/>rather than the specific realization.)
+(Why is the <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y"/> capitalized? because we are looking at the random variable <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y_{ij}"/> rather than the specific realization.)
 
 ### Getting Started
 
@@ -82,7 +82,7 @@ The ergm equation can be re-written in terms of change statistics. The log-odds 
 library(networkdata)
 ```
 
-As Elspeth Ready and I argue in a forthcoming paper, anthropologists and ethologists were early, if often overlooked, contributors to relational methods. The conventional origin of social network analysis is typically thought to be Moreno's (1934) classic, *Who Shall Survive?*. Evans-Pritchard wrote a paper in 1929 that anticipated structural balance theory in explaining the strained relationships between Zande son's and their mothers (Evans-Pritchard 1929). Clarence Ray Carpenter sketched sociograms in his field notebooks documenting his studies of howler monkeys of Barro Colorado Island in 1932. We will use the data from a paper by H. Bott in 1928 that used ethological observations of children in a nursery school (Bott 1928). The Bott data actually contain five sets of relations:
+As Elspeth Ready and I argue in a forthcoming paper, anthropologists and ethologists were early, if often overlooked, contributors to relational methods. The conventional origin of social network analysis is typically thought to be Moreno's (1934) classic, *Who Shall Survive?* Evans-Pritchard wrote a paper in 1929 that anticipated structural balance theory in explaining the strained relationships between Zande son's and their mothers (Evans-Pritchard 1929). Clarence Ray Carpenter sketched sociograms in his field notebooks documenting his studies of howler monkeys of Barro Colorado Island in 1932. We will use the data from a paper by H. Bott in 1928 that used ethological observations of children in a nursery school (Bott 1928). The Bott data actually contain five sets of relations:
 
 1.  talked to another child
 2.  interfered with another child
@@ -229,7 +229,7 @@ plot(bott[[5]])
 
 ![](ergm-intro_files/figure-markdown_github/unnamed-chunk-2-5.png)
 
-We can see that the first three relations yield quite dense networks (note that ergms would not tell us much in this case!). We will work first with the imitation network.
+We can see that the first three relations yield quite dense networks (note that ergms would not tell us much in this case)! We will work first with the imitation network.
 
 The first thing we'll do is fit a model that just has edges in it. This is kind of like fitting a regression model with only an intercept.
 
@@ -359,7 +359,7 @@ In general, triangles cause problems in ergms. They often lead to a phenomenon k
 
 A series of papers by Katie Faust (2007, 2008, 2010) shows that triadic structures are *highly constrained* by lower-level structures, namely, edge density. In the limited-choice paradigm employed by Ad Health (i.e., "name your five best female/male friends"), Faust (2010) found that the triad census in 128 networks was almost perfectly explained by one dimension of a multivariate analysis (conceptually similar to the loading on a principal component) and that edge density accounted for 96% of the variance in locations along this dimension!
 
-This result was extreme -- and determined in large part by the analysis of restricted-choice questions for a single relation -- but the point remains: the number (and pattern) of triads in a network will be highly constrained by the number of edges and the size of the network, which jointly determine the network density. Mark Handcock (2003) showed that this situation of extreme constraint causes the MCMC algorithm by which ergms are estimated to behave badly, leading to the condition of degeneracy discussed above. A network model is degenerate when the space that an MCMC sampler can explore the network space is so constrained that the only way to get the observed <img src="https://latex.codecogs.com/svg.latex?\Large&space;yg(y)" is essentially to flicker between full and empty graphs in the right proportion. Not what you want out of an MCMC estimator. A good indication that you have a degenerate model is that you have `NA` values for standard errors on your ergm parameter estimates. You can't calculate a variance -- and, therefore, a standard error -- if you simply flicker between full and empty graphs.
+This result was extreme -- and determined in large part by the analysis of restricted-choice questions for a single relation -- but the point remains: the number (and pattern) of triads in a network will be highly constrained by the number of edges and the size of the network, which jointly determine the network density. Mark Handcock (2003) showed that this situation of extreme constraint causes the MCMC algorithm by which ergms are estimated to behave badly, leading to the condition of degeneracy discussed above. A network model is degenerate when the space that an MCMC sampler can explore the network space is so constrained that the only way to get the observed <img src="https://latex.codecogs.com/svg.latex?\Large&space;g(y)"/> is essentially to flicker between full and empty graphs in the right proportion. Not what you want out of an MCMC estimator. A good indication that you have a degenerate model is that you have `NA` values for standard errors on your ergm parameter estimates. You can't calculate a variance -- and, therefore, a standard error -- if you simply flicker between full and empty graphs.
 
 The upshot of this is that, despite our strong intuitions about the importance of triadic interactions in determining social structure, we do not recommend using the `triangle` term in ergms. There are better alternatives, which we will discuss later.
 
@@ -581,7 +581,7 @@ summary(bottmodel.05)
     ##  
     ## AIC: 136.2    BIC: 141.6    (Smaller is better.)
 
-One possibility is that the difference in age between two children determines the likelihood of one imitating the other. We can test that hypothesis by including as an edge-level covariate the absolute difference in age between two vertices. To calculate this (and preserve the structure of the matrix to make using it as an edge covariate simple), we employ the trick of using the `R` function `outer()`. This function is a generalization of the outer product in linear algebra in which two vectors, <img src="https://latex.codecogs.com/svg.latex?\Large&space;x"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;y",/> each of length img src="https://latex.codecogs.com/svg.latex?\Large&space;k"/>, are multiplied such that the <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\rightarrow}ij"/>th element of the resulting <img src="https://latex.codecogs.com/svg.latex?\Large&space;k{\times}k"/> matrix is the product <img src="https://latex.codecogs.com/svg.latex?\Large&space;x_{i},y_{j}"/>. `outer()` takes as its first two arguments the vectors (or matrices) to which your operation will be applied and the (optional) third argument is the function to be applied. If not specified, this is assumed to be multiplication. In our case, we will use subtraction to calculate our absolute differences.
+One possibility is that the difference in age between two children determines the likelihood of one imitating the other. We can test that hypothesis by including as an edge-level covariate the absolute difference in age between two vertices. To calculate this (and preserve the structure of the matrix to make using it as an edge covariate simple), we employ the trick of using the `R` function `outer()`. This function is a generalization of the outer product in linear algebra in which two vectors, <img src="https://latex.codecogs.com/svg.latex?\Large&space;x"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;y"/> each of length img src="https://latex.codecogs.com/svg.latex?\Large&space;k"/>, are multiplied such that the <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\rightarrow}ij"/>th element of the resulting <img src="https://latex.codecogs.com/svg.latex?\Large&space;k{\times}k"/> matrix is the product <img src="https://latex.codecogs.com/svg.latex?\Large&space;x_{i}y_{j}"/>. `outer()` takes as its first two arguments the vectors (or matrices) to which your operation will be applied and the (optional) third argument is the function to be applied. If not specified, this is assumed to be multiplication. In our case, we will use subtraction to calculate our absolute differences.
 
 ``` r
 ## note that this creates a vector of all the kids' ages
@@ -680,8 +680,7 @@ plot(bottmodel.06.gof)
 
 The model-fit looks pretty solid. Our observed statistics fall within the range of the simulated values, there are no small p-values, and our plots show no major red flags.
 
-Assessing MCMC diagnostics
-==========================
+### Assessing MCMC diagnostics
 
 Even if your model-fit is good, for models with dependence terms, the quality of the MCMC simulation that generated the model estimates also need to be carefully evaluated to ensure that your model is reliable.
 
