@@ -1,3 +1,5 @@
+# Introduction to ERGMs
+
 -   [What is an ERGM?](#what-is-an-ergm)
 -   [Why not use standard regression methods?](#why-not-use-standard-regression-methods)
     -   [Some practical reasons](#some-practical-reasons)
@@ -18,8 +20,7 @@
 
 Back to [main page](README.md).
 
-What is an ERGM?
-================
+### What is an ERGM?
 
 ERGM stands for Exponential Random Graph Model. The goal of ERGMs is to "describe parsimoniously the local selection forces that shape the global structure of a network" (Hunter et al. 2008).
 
@@ -27,44 +28,40 @@ ERGMs are analogous to logistic regression: they predict the probability that a 
 
 ERGMs can be used for directed, undirected, valued, unvalued, and bipartite networks.
 
-Why not use standard regression methods?
-========================================
+### Why not use standard regression methods?
 
-Some practical reasons
-----------------------
+#### Some practical reasons
 
 -   ERGMS can be used to simulate similar networks as well as to conduct regression-like analyses
 -   ERGMs more intuitively allow you to include interactions between individual attributes at the dyadic level, as well as edge attributes and predictor networks
 
-Theoretical reasons
--------------------
+#### Theoretical reasons
 
 -   Ties between nodes in real social networks are not independent; for example, as we've seen, reciprocity and transitivity are common features of human social networks.
 -   This non-independence violates the most basic assumption of regression!
 -   Through simulation, ERGMs allow dyadic and higher-order dependencies to be modeled.
 -   Treating individuals as independent of their social context is a very strange thing to do from an anthropological perspective.
 
-What is a random graph?
-=======================
+### What is a random graph?
 
-Imagine a network with *n* nodes.
+Imagine a network with <img src="https://latex.codecogs.com/svg.latex?\Large&space;p"/> nodes.
 
-Edges between nodes could occur randomly with probability *p* (each potential edge is one Bernoulli trial). Network density, or the number of edges in observed network divided by the number of possible edges, is usually used for *p*. In this case, the degree of any node is binomially distributed (with *n* − 1 Bernoulli trials per node, for a directed graph).
+Edges between nodes could occur randomly with probability <img src="https://latex.codecogs.com/svg.latex?\Large&space;p"/> (each potential edge is one Bernoulli trial). Network density, or the number of edges in observed network divided by the number of possible edges, is usually used for <img src="https://latex.codecogs.com/svg.latex?\Large&space;p"/>. In this case, the degree of any node is binomially distributed (with <img src="https://latex.codecogs.com/svg.latex?\Large&space;n-1"/> Bernoulli trials per node, for a directed graph).
 
 This type of random graph often referred to as an "Erdős-Rényi" graph. These random graphs are the "null" hypothesis of an ERGM.
 
-ERGMs
-=====
+### ERGMs
 
-Let **Y** denote an *n* × *n* sociomatrix where *y*<sub>*i**j*</sub> = 1 if individuals *i* and *j* have a tie. Let **X** denote a matrix of covariates, which includes structural measures of the network as well as nodal and possibly edge-level attributes. A generic ERGM can be written as:
+Let <img src="https://latex.codecogs.com/svg.latex?\Large&space;\mathbf{Y}"/> denote an <img src="https://latex.codecogs.com/svg.latex?\Large&space;n{\times}n"/> sociomatrix where <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}=1"/> if individuals <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}=i"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;j"/> have a tie. Let <img src="https://latex.codecogs.com/svg.latex?\Large&space;\mathbf{X}"/> denote a matrix of covariates, which includes structural measures of the network as well as nodal and possibly edge-level attributes. A generic ERGM can be written as:
 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;P_{\theta,\mathcal{Y}}(\mathbf{Y=y|X})=\frac{\exp\{\theta^{\textsf{T}}g(y,X)\}}{\kappa(\theta,\matchcal{Y})}"/> 
 $$P\_{\\theta, \\mathcal{Y}}(\\mathbf{Y = y| X}) = \\frac{\\exp\\{ \\theta^{\\textsf{T}} g(y, X)\\}}{\\kappa(\\theta, \\mathcal{Y})},$$
- where *θ* is a vector of coefficients, *g*(*y*, **X**) is a vector of sufficient statistics, 𝒴 is the space of possible graphs, and *κ*(*θ*, 𝒴) is a normalizing constant. That is, it's the numerator summed across all possible graphs 𝒴. For even moderate *n*, *κ*(*θ*, 𝒴) can be enormous, so closed-form solutions are unfeasible. The number of labeled, undirected graphs of *n* vertices is 2<sup>*n*(*n* − 1)/2</sup>, which can get big fast. For example, for a network of *n* &gt; 7, there are over two million undirected graphs, which means that you would need to calculate the likelihood for each one of these in order to compute *κ*. This is generally not practical for even moderately-sized graphs.
 
-Some Definitions and Notation
------------------------------
+where <img src="https://latex.codecogs.com/svg.latex?\Large&space;\theta"/>  is a vector of coefficients, <img src="https://latex.codecogs.com/svg.latex?\Large&space;g(y,\mathbf{X})"/> is a vector of sufficient statistics, <img src="https://latex.codecogs.com/svg.latex?\Large&space;\mathcal{Y}"/> is the space of possible graphs, and <img src="https://latex.codecogs.com/svg.latex?\Large&space;\kappa(\theta,\mathcal{Y})"/>  is a normalizing constant. That is, it's the numerator summed across all possible graphs <img src="https://latex.codecogs.com/svg.latex?\Large&space;\mathcal{Y}"/> . For even moderate <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"/>, <img src="https://latex.codecogs.com/svg.latex?\Large&space;\kappa(\theta,\mathcal{Y})"/> can be enormous, so closed-form solutions are unfeasible. The number of labeled, undirected graphs of <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"/> vertices is <img src="https://latex.codecogs.com/svg.latex?\Large&space;2^{n(n-1)/2}"/>, which can get big fast. For example, for a network of <img src="https://latex.codecogs.com/svg.latex?\Large&space;n>7"/> , there are over two million undirected graphs, which means that you would need to calculate the likelihood for each one of these in order to compute <img src="https://latex.codecogs.com/svg.latex?\Large&space;\kappa"/> . This is generally not practical for even moderately-sized graphs.
 
--   *y*<sub>*i**j*</sub> denotes the *i**j*th dyad in graph *y* if *y*<sub>*i**j*</sub> = 1, then *i* and *j* are connected by an edge, if *y*<sub>*i**j*</sub> = 0, they are not.
+#### Some Definitions and Notation=
+
+-   <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}"/> denotes the <img src="https://latex.codecogs.com/svg.latex?\Large&space;ij"/> th dyad in graph <img src="https://latex.codecogs.com/svg.latex?\Large&space;y"/>. If <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}=1"/>, then <img src="https://latex.codecogs.com/svg.latex?\Large&space;i"/>  and <img src="https://latex.codecogs.com/svg.latex?\Large&space;j"/>  are connected by an edge, if <img src="https://latex.codecogs.com/svg.latex?\Large&space;y_{ij}=0"/> , they are not.
 -   *y*<sub>*i**j*</sub><sup>*c*</sup> is the status of all other pairs of vertices in *y* other than (*i*, *j*).
 -   *y*<sub>*i**j*</sub><sup>+</sup> is the same network as *y* except that *y*<sub>*i**j*</sub> = 1.
 -   *y*<sub>*i**j*</sub><sup>−</sup> is the same network as *y* except that *y*<sub>*i**j*</sub> = 0.
@@ -76,8 +73,7 @@ The ergm equation can be re-written in terms of change statistics. The log-odds 
 
 (why is the *Y* capitalized? because we are looking at the random variable *Y*<sub>*i**j*</sub> rather than the specific realization)
 
-Getting Started
-===============
+### Getting Started
 
 [Zack Almquist](http://users.stat.umn.edu/~almquist/) has put together Lin Freeman's collection of network data in his `networkdata` package, which is on [github](https://github.com/zalmquist) and can be installed using `R` `devtools`. Using `devtools` raises a couple possible issues that might be challenging for novices, particularly for people using Windows machines, so we will make the Bott data set available separately from the `networkdata` package. If you were to use `networkdata`, here's what you would do (I commented out the `library(devtools)` and `install_github()` command in these notes because I already have the package installed!).
 
@@ -277,8 +273,7 @@ summary(bottmodel.01) # The fitted model object
 
 You'll notice that this model fits very quickly, and yields the same result every time you run it. This is because this model contains no *dependency* terms, meaning terms that model how the probability of a tie between two nodes is affected by existing ties in the network. In models without dependency terms, the ERGM solution can be approximated without simulation, using MPLE. This is basically fitting a logistic regression to our network ties. We now consider a model with a dependency term that helps to deal with the "problem" of transitivity.
 
-The Allure of Triangles
------------------------
+#### The Allure of Triangles
 
 Triads are really important for understanding social relations. Some important roles for triads:
 
@@ -359,18 +354,17 @@ summary(bottmodel.02)
     ##  
     ## AIC: 141.5    BIC: 146.9    (Smaller is better.)
 
-You will notice that as we move from the edges-only model to the edges-plus-triangles, the estimation method changes. Triangles are a dyad-dependent term and the ergm must be fit using MCMC simulation. Depending on the size of your network, this might take a while. Whenever `ergm` fits a model via MCMC, you will get a warning telling you to check for degeneracy and model diagnostics. If the model shows clear signs of degeneracy, you will receive a warning (but don't assume that if you don't get a warning that the model is fine -- always check the MCMC diagnostics and the model goodness-of-fit).
+You will notice that as we move from the edges-only model to the edges-plus-triangles, the estimation method changes. Triangles are a dyad-dependent term and the ergm must be fit using MCMC simulation. Depending on the size of your network, this might take a while. Whenever `ergm` fits a model via MCMC, you will get a warning telling you to check for degeneracy and model diagnostics. If the model shows clear signs of degeneracy, you will receive a warning (but don't assume that if you don't get a warning that the model is fine; always check the MCMC diagnostics and the model goodness-of-fit).
 
 In general, triangles cause problems in ergms. They often lead to a phenomenon known as *degeneracy*. While our intuition tells us that triangles should matter for networks -- because triangles result from transitivity -- it turns out that there are better ways to represent transitivity in network models.
 
 A series of papers by Katie Faust (2007, 2008, 2010) shows that triadic structures are *highly constrained* by lower-level structures, namely, edge density. In the limited-choice paradigm employed by Ad Health (i.e., "name your five best female/male friends"), Faust (2010) found that the triad census in 128 networks was almost perfectly explained by one dimension of a multivariate analysis (conceptually similar to the loading on a principal component) and that edge density accounted for 96% of the variance in locations along this dimension!
 
-This result was extreme -- and determined in large part by the analysis of restricted-choice questions for a single relation -- but the point remains: the number (and pattern) of triads in a network will be highly constrained by the number of edges and the size of the network, which jointly determine the network density. Mark Handcock (2003) showed that this situation of extreme constraint causes the MCMC algorithm by which ergms are estimated to behave badly, leading to the condition of degeneracy discussed above. A network model is degenerate when the space that an MCMC sampler can explore the network space is so constrained that the only way to get the observed *g*(*y*) is essentially to flicker between full and empty graphs in the right proportion. Not what you want out of an MCMC estimator. A good indication that you have a degenerate model is that you have `NA` values for standard errors on your ergm parameter estimates. You can't calculate a variance -- and, therefore, a standard error -- if you simply flicker between full and empty graphs.
+This result was extreme -- and determined in large part by the analysis of restricted-choice questions for a single relation -- but the point remains: the number (and pattern) of triads in a network will be highly constrained by the number of edges and the size of the network, which jointly determine the network density. Mark Handcock (2003) showed that this situation of extreme constraint causes the MCMC algorithm by which ergms are estimated to behave badly, leading to the condition of degeneracy discussed above. A network model is degenerate when the space that an MCMC sampler can explore the network space is so constrained that the only way to get the observed <img src="https://latex.codecogs.com/svg.latex?\Large&space;yg(y)" is essentially to flicker between full and empty graphs in the right proportion. Not what you want out of an MCMC estimator. A good indication that you have a degenerate model is that you have `NA` values for standard errors on your ergm parameter estimates. You can't calculate a variance -- and, therefore, a standard error -- if you simply flicker between full and empty graphs.
 
 The upshot of this is that, despite our strong intuitions about the importance of triadic interactions in determining social structure, we do not recommend using the `triangle` term in ergms. There are better alternatives, which we will discuss later.
 
-Nodal Covariates
-----------------
+#### Nodal Covariates
 
 We often have a situation where we think that the attributes of the individuals who make up our graph vertices may affect their propensity to form (or receive) ties. To test this hypothesis, we can employ *nodal covariates* using the `nodecov()` term.
 
@@ -496,10 +490,9 @@ summary(bottmodel.03c)
 
 The greater the difference in age between children, the less likely is it that one of them imitates the other.
 
-Reciprocity
------------
+#### Reciprocity
 
-Reciprocity is a common relation that we wish to investigate in anthropological investigations. `ergm` includes an elegant term for testing the hypothesis of reciprocity in directed networks. The term we use is `mutual` and it is defined as the number of pairs in the network in which (*i*, *j*) and (*j*, *i*) both exist.
+Reciprocity is a common relation that we wish to investigate in anthropological investigations. `ergm` includes an elegant term for testing the hypothesis of reciprocity in directed networks. The term we use is `mutual` and it is defined as the number of pairs in the network in which <img src="https://latex.codecogs.com/svg.latex?\Large&space;i{\rightarrow}j"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;i{\leftarrow}j"/> both exist.
 
 ``` r
 bottmodel.04 <- ergm(bott[[4]]~edges+mutual)
@@ -551,8 +544,7 @@ summary(bottmodel.04)
     ##  
     ## AIC: 141.5    BIC: 146.9    (Smaller is better.)
 
-Edge Covariates
----------------
+#### Edge Covariates
 
 The idea of a nodal covariate is pretty straightforward. These are often what we would call (socio-demographic) *attributes* (e.g., age, sex, status, location) in more standard regression models. In the network framework, it is entirely possible that the relation itself might be modified by a covariate. For example, in a forthcoming paper, [Brian Wood](http://www.brianwoodresearch.com/) and I show that Hadza food-sharing is predicted by reciprocal sharing relations, relatedness, and gender homophily. Reciprocity is modeled, as above, using a `mutual` term and gender homophily by a `nodematch` term. Relatedness is an edge-level covariate and is measured using a pairwise matrix of the coefficient of relatedness.
 
@@ -590,7 +582,7 @@ summary(bottmodel.05)
     ##  
     ## AIC: 136.2    BIC: 141.6    (Smaller is better.)
 
-One possibility is that the difference in age between two children determines the likelihood of one imitating the other. We can test that hypothesis by including as an edge-level covariate the absolute difference in age between two vertices. To calculate this (and preserve the structure of the matrix to make using it as an edge covariate simple), we employ the trick of using the `R` function `outer()`. This function is a generalization of the outer product in linear algebra in which two vectors, *x* and *y*, each of length *k*, are multiplied such that the *i**j*th element of the resulting *k* × *k* matrix is the product *x*<sub>*i*</sub> *y*<sub>*j*</sub>. `outer()` takes as its first two arguments the vectors (or matrices) to which your operation will be applied and the (optional) third argument is the function to be applied. If not specified, this is assumed to be multiplication. In our case, we will use subtraction to calculate our absolute differences.
+One possibility is that the difference in age between two children determines the likelihood of one imitating the other. We can test that hypothesis by including as an edge-level covariate the absolute difference in age between two vertices. To calculate this (and preserve the structure of the matrix to make using it as an edge covariate simple), we employ the trick of using the `R` function `outer()`. This function is a generalization of the outer product in linear algebra in which two vectors, <img src="https://latex.codecogs.com/svg.latex?\Large&space;x"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;y",/> each of length img src="https://latex.codecogs.com/svg.latex?\Large&space;k"/>, are multiplied such that the <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\rightarrow}ij"/>th element of the resulting <img src="https://latex.codecogs.com/svg.latex?\Large&space;k{\times}k"/> matrix is the product <img src="https://latex.codecogs.com/svg.latex?\Large&space;x_{i},y_{j}"/>. `outer()` takes as its first two arguments the vectors (or matrices) to which your operation will be applied and the (optional) third argument is the function to be applied. If not specified, this is assumed to be multiplication. In our case, we will use subtraction to calculate our absolute differences.
 
 ``` r
 ## note that this creates a vector of all the kids' ages
@@ -635,8 +627,7 @@ summary(bottmodel.06)
 
 The edge covariance matrix of age differences that we calculated here is the same as what is produced by the `absdiff()` term used above (run models with each of these terms without the conversation network if you want to confirm this). The `ergm` package provides the `absdiff()` term for convenience; we show the calculation of an edge covariance matrix to demonstrate the logic of edge covariates and to show how more complex edge covariate matrices might be calculated (for instance, if you wished to take the log of the absolute difference).
 
-Determining Model Goodness-of-Fit
-=================================
+### Determining Model Goodness-of-Fit
 
 It is relatively straightforward to fit a model. Determining whether or not the model makes any sense is another matter altogether. When we use ordinary least-squares regression, for example, we are probably used to calculating *residuals*, which are the difference between the observed and the predicted values for a specific value of the independent variable. While there is no simple analog to a residual in a linear model, we can ask whether our observed network is consistent with the family of networks implied by our estimated model parameters.
 
@@ -783,12 +774,11 @@ A few suggestions and warnings for running models with MCMLE:
 -   Set the seed in R (using `set.seed()`) for any model you plan to publish so you (and others) can replicate your results.
 -   Always expect to encounter difficulties.
 
-Edgewise shared partnerships, or triangles revisited
-====================================================
+### Edgewise shared partnerships, or triangles revisited
 
 Throughout our material we have emphasized the importance of triangles and transitivity in the kinds of social networks that are typically studied by anthropologists. But, as we noted earlier, the `triangles` term, which in theory should be the simplest way to model triad closure in an ERGM, frequently leads to model degeneracy.
 
-Hunter (<span class="citeproc-not-found" data-reference-id="Hunter2007">**???**</span>) and colleagues have taken a different approach to modeling triad closure, that involves counting *edgewise shared partnerships*. Two nodes *i* and *j* have an edgewise shared partner (ESP) if they are connected to each other *and* each is also connected to a third node *k*. In other words, two nodes have an ESP if a tie between them closes a triangle.
+Hunter (<span class="citeproc-not-found" data-reference-id="Hunter2007">**???**</span>) and colleagues have taken a different approach to modeling triad closure, that involves counting *edgewise shared partnerships*. Two nodes <img src="https://latex.codecogs.com/svg.latex?\Large&space;i"/> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;j"/> have an edgewise shared partner (ESP) if they are connected to each other *and* each is also connected to a third node <img src="https://latex.codecogs.com/svg.latex?\Large&space;k"/>. In other words, two nodes have an ESP if a tie between them closes a triangle.
 
 There are lots of good reasons to expect that ties that close triangles might have a higher probability than ties that don't; yet, it is also fair to say that not all triangles are equally probable. Your two closest friends may know each other, but as you consider ties with more and more distance acquaintances, the less likely it is that they also know your other friends. To model this sort of process, the odds of closing a triangle (or equivalently, adding another edgewise shared partnership to the network) can be weighted based on existing ties in the network.
 
@@ -859,8 +849,7 @@ There are other geometrically-weighted terms implemented in `ergm` in addition t
 
 Getting models with geometrically-weighted terms to converge can be difficult, especially if you are trying to estimate the decay parameter as well as the coefficient for the geometrically-weighted term. A common work-around for this issue involves running models with different values of the decay parameter and choosing the decay parameter that gives the best model fit.
 
-Strategies for model-building
-=============================
+### Strategies for model-building
 
 ERGMs are powerful tools, but like other statistical methods they are not without flaws, so we conclude with a few words of caution.
 
@@ -874,8 +863,7 @@ Finally, no ERGM is a perfect model of the microlevel processes that lead to glo
 
 For these reasons, it is essential for your modeling strategy to be strongly motivated by hypotheses that can help inform your choice of which covariates, including dependency terms, to include and how to include them. Good hypotheses also help you evaluate when a model is adequate to answer your research question.
 
-References
-==========
+### References
 
 Bearman, Peter S., and James Moody. 2004. “Suicide and Friendships Among American Adolescents.” *American Journal of Public Health* 94 (1): 89–95. doi:[10.2105/AJPH.94.1.89](https://doi.org/10.2105/AJPH.94.1.89).
 
