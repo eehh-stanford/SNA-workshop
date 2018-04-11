@@ -1,3 +1,5 @@
+# Graph concepts and measures
+
 -   [Introduction](#introduction)
     -   [Degree and Degree Distributions](#degree-and-degree-distributions)
     -   [Geodesics](#geodesics)
@@ -14,17 +16,14 @@
     -   [Closeness](#closeness)
     -   [Betweenness](#betweenness)
     -   [Other measures of centrality](#other-measures-of-centrality)
-        -   [Informational centrality](#informational-centrality)
-        -   [Eigenvalue Centrality](#eigenvalue-centrality)
     -   [Comparing Centralities](#comparing-centralities)
 -   [References](#references)
 
-Introduction
-============
+### Introduction
 
 A **graph** is simply a collection of vertices (or nodes) and edges (or ties). We can denote this 𝒢(*V*, *E*), where *V* is the vertex set and *E* is the edge set. The vertices of the graph represent the actors in the social system. These are usually individual people, but they could be households, geographical localities, institutions, or other social entities. The edges of the graph represent the relations between these entities (e.g., "is friends with" or "has sexual intercourse with" or "sends money to"). These edges can be directed (e.g., "sends money to") or undirected (e.g., "within 2 meters of"). When the relations that define the graph are directional, we have a directed graph or **digraph**. The edges in a graph connect unordered pairs of vertices and are sometimes called **lines**. The edges in a digraph connect ordered pairs of vertices and are sometimes called **arcs**. Graphs (and digraphs) can be binary (i.e., presence/absence of a relationship) or valued (e.g., "groomed five times in the observation period", "sent $100"). When an edge connects to a vertex, it is said to be **incident** to that vertex. The number of edges that are incident to vertex *v*<sub>*i*</sub> is the **degree** of *v*<sub>*i*</sub> and the collection of all degrees of a graph is known as the **degree distribution**. A vertex with degree zero is an **isolate**. The number of vertices in a graph is the **order** of the graph.
 
-A graph (with no self-loops) with *n* vertices has ${n \\choose 2} = n(n-1)/2$ possible unordered pairs. This number (which increases very rapidly with *n*) is important for defining the **density** of a graph, which is the fraction of all possible relations that actually exist in a network.
+A graph (with no self-loops) with *n* vertices has  <img src="https://latex.codecogs.com/svg.latex?\Large&space;n{\choose}2=n(n-1)/2"/> possible unordered pairs. This number (which increases very rapidly with *n*) is important for defining the **density** of a graph, which is the fraction of all possible relations that actually exist in a network.
 
 The most basic non-trivial graph is a connected dyad. Note that a **dyad** is simply a pair of vertices, connected or not. This graph has two vertices and a single edge. We can create and visualize this graph using `igraph`.
 
@@ -68,15 +67,17 @@ plot(g, layout=tri.coords, vertex.color="lightblue")
 
 ![](graphs_files/figure-markdown_github/unnamed-chunk-2-1.png)
 
-We can represent the relationships of our social network using a **matrix**. A matrix is simply a rectangular array of numbers with *n* rows and *k* columns. It is conventional to denote matrices mathematically using capital letters and boldface, such as **A**. We indicate the *i**j*th element (i.e., the element corresponding to row *i* and column *j*) of **A** as *a*<sub>*i**j*</sub>. A **sociomatrix** or **adjacency matrix** is a square matrix (i.e., *n* × *n*, where *n* is the number of vertices in the network). It is typically binary, with *a*<sub>*i**j*</sub> = 1 if individuals *i* and *j* share an edge and *a*<sub>*i**j*</sub> = 0 otherwise. The sociomatrix corresponding to our triangle is
+We can represent the relationships of our social network using a **matrix**. A matrix is simply a rectangular array of numbers with *n* rows and *k* columns. It is conventional to denote matrices mathematically using capital letters and boldface, such as **A**. We indicate the *ij*th element (i.e., the element corresponding to row *i* and column *j*) of **A** as <img src="https://latex.codecogs.com/svg.latex?\Large&space;a_{ij}"/>. A **sociomatrix** or **adjacency matrix** is a square matrix (i.e., *n* × *n*, where *n* is the number of vertices in the network). It is typically binary, with <img src="https://latex.codecogs.com/svg.latex?\Large&space;a_{ij}=1"/> if individuals *i* and *j* share an edge and <img src="https://latex.codecogs.com/svg.latex?\Large&space;a_{ij}=0"/> otherwise. The sociomatrix corresponding to our triangle is
 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\mathbf{A}=\left["/>
 \begin{equation}
 \mathbf{A} = \left[ \begin{array}{cccc} 
- 0   &  1   & 1 \\
+ 0   &  1   & 1 \\
  1   &  0   & 1 \\
  1   &  1   & 0  \end{array} \right]. 
 \end{equation}
-By convention, the diagonal elements of a sociomatrix are all zero (i.e., self-loops are not allowed). Sociomatrix **A** in the equation above is symmetric (*a*<sub>*i**j*</sub> = *a*<sub>*j**i*</sub>) because the graph is undirected. For a digraph, the upper triangle (i.e., matrix elements above the diagonal) of the sociomatrix will generally be different than the lower triangle.
+
+By convention, the diagonal elements of a sociomatrix are all zero (i.e., self-loops are not allowed). Sociomatrix **A** in the equation above is symmetric (<img src="https://latex.codecogs.com/svg.latex?\Large&space;a_{ij}=a_{ji}"/>) because the graph is undirected. For a digraph, the upper triangle (i.e., matrix elements above the diagonal) of the sociomatrix will generally be different than the lower triangle.
 
 ``` r
 A <- matrix( c(0,1,1, 1,0,1, 1,1,0), nrow=3, ncol=3, byrow=TRUE)
