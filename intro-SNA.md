@@ -15,17 +15,17 @@
 -   [Cleaning network data (is miserable)](#cleaning-network-data-is-miserable)
 -   [Data flexibility](#data-flexibility)
 
+Back to [main page](README.md).
+
 ### Background to the study of social structure
 
 Modern social-network analysis (SNA) has its roots in anthropology, particularly structuralism (Radcliffe-Brown's *On Social Structure*, 1940).
 
 -   Make a scientific study of sociality by generalizing the particular: focus on systems, rather than culture
-
 -   Social function: how a social behavior is related to the overall structure
     -   That A &lt;--&gt; B is not important
     -   How it forms a component of the whole structure
 -   Thus, behaviors may be particular, but structure is somewhat predictable.
-
 -   Study of social structure is not a deviation from natural science: physics (atomic); chemistry (molecular); biology (cellular); anthropology/ethology (social)
 
 ### Contextualizing SNA and relational data
@@ -33,8 +33,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 -   Derived from structural anthropology, but utilized in many fields
 -   Can measure network structure and/or simulate activity within a network
 -   The SNA endeavor can be highly computational **AND** highly ethnographic
-
-       
+   
 <!--<table>
 <colgroup>
 <col width="33%" />
@@ -130,6 +129,7 @@ Sometimes you may only need descriptives of your network---***it depends on your
     -   cross-sectional
 -   Thus, a sociomatrix (below) is rarely useful.
 
+
 |            | ego | alter1 | alter2 | alter3 | alter4 | alter5 |
 |:----------:|:---:|:------:|:------:|:------:|:------:|:------:|
 |   **ego**  |  -  |    1   |    1   |    1   |    1   |    1   |
@@ -138,6 +138,7 @@ Sometimes you may only need descriptives of your network---***it depends on your
 | **alter3** |  1  |    1   |    0   |    -   |    1   |    0   |
 | **alter4** |  1  |    0   |    0   |    1   |    -   |    1   |
 | **alter5** |  1  |    1   |    0   |    0   |    1   |    -   |
+
 
 -   These characteristics reflect the tradeoffs of real-world data collection.
 -   Their affect on data visualization and analysis must be strategized at the outset of data collection.
@@ -164,7 +165,7 @@ What if:
 
 -   Network data collection can actually be a fairly messy endeavor.
 -   Setting up your surveys to streamline the data prep step will save your sanity.
-    -   Different research objectives call for very different set-ups.
+-   Different research objectives call for very different set-ups.
 
 Let's look at a couple of examples...
 
@@ -224,5 +225,4 @@ Log-linear models of homophily
 
 <!--Epidemic models requiring highly detailed contact structures
 $$\\sum\_{j}(\\rho\_{k',ij}) = r\_{i}\\delta\_{i,j}+(1-r\_{i})(\\frac{(1-r\_{j})c\_{k',j}N\_{k',j}}{\\sum\_{j}(1-r\_{j})c\_{k',j}N\_{k',j})})$$
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\sum_{j}(\rho_{k',ij})=r_{i}\delta_{i,j}+(1-r_{i})()"/> 
 -   Travel/mobility or institutional data can be turned into bipartite networks. -->
