@@ -39,7 +39,6 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 -   The SNA endeavor can be highly computational **AND** highly ethnographic
 
        
-
 <table>
 <colgroup>
 <col width="33%" />
@@ -56,35 +55,17 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center">______________________</td>
-<td align="center">____________</td>
-<td align="center">_____________</td>
-<td align="center">____________________</td>
-</tr>
 <tr class="even">
 <td align="center">Quantitative</td>
 <td align="center">Variable</td>
 <td align="center">Individual</td>
 <td align="center">Survey</td>
 </tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
 <tr class="even">
 <td align="center"><span style="color:purple"> Network </span></td>
 <td align="center"><span style="color:purple"> Relational </span></td>
 <td align="center"><span style="color:purple"> Relationship </span></td>
 <td align="center"><span style="color:purple"> Survey / Ethnographic techniques / Observation </span></td>
-</tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
 </tr>
 <tr class="even">
 <td align="center">Qualitative</td>
@@ -110,7 +91,7 @@ Basic terms to get familiar with:
 ### Different types of networks
 
 <p align="center">
-![](/Users/ashleyhazel/Box%20Sync/social_networks/teaching_materials/AH_SNA_images/Fig%202.png)
+![](AH_SNA_images/Fig2.png)
 </p>
 
 ### Basic node measurements
@@ -163,7 +144,7 @@ Closeness: <span style="color:blue"> The inverse of the sum of the shortest path
 -   Positive/negative ties
 
 <p align="center">
-![](/Users/ashleyhazel/Box%20Sync/social_networks/teaching_materials/AH_SNA_images/Fig%203.png)
+![](AH_SNA_images/Fig3.png)
 </p>
 
 ### Network datasets
@@ -227,7 +208,7 @@ What if:
 **Less structured**
 
 <p align="center">
-![](AH_SNA_images/Himba%20survey.jpg)
+![](AH_SNA_images/Himba_survey.jpg)
 </p>
 
 ### Ethics and sensitivity
