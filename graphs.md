@@ -20,6 +20,10 @@
     -   [Comparing Centralities](#comparing-centralities)
 -   [References](#references)
 
+Download the R script for this tutorial [here](graphs.R).
+
+Return to [main page](README.md).
+
 ### Introduction
 
 A **graph** is simply a collection of vertices (or nodes) and edges (or ties). We can denote this 𝒢(*V*, *E*), where *V* is the vertex set and *E* is the edge set. The vertices of the graph represent the actors in the social system. These are usually individual people, but they could be households, geographical localities, institutions, or other social entities. The edges of the graph represent the relations between these entities (e.g., "is friends with" or "has sexual intercourse with" or "sends money to"). These edges can be directed (e.g., "sends money to") or undirected (e.g., "within 2 meters of"). When the relations that define the graph are directional, we have a directed graph or **digraph**. The edges in a graph connect unordered pairs of vertices and are sometimes called **lines**. The edges in a digraph connect ordered pairs of vertices and are sometimes called **arcs**. Graphs (and digraphs) can be binary (i.e., presence/absence of a relationship) or valued (e.g., "groomed five times in the observation period", "sent $100"). When an edge connects to a vertex, it is said to be **incident** to that vertex. The number of edges that are incident to vertex *v*<sub>*i*</sub> is the **degree** of *v*<sub>*i*</sub> and the collection of all degrees of a graph is known as the **degree distribution**. A vertex with degree zero is an **isolate**. The number of vertices in a graph is the **order** of the graph.
