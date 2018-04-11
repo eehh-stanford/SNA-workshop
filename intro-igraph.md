@@ -17,6 +17,8 @@
 -   [Laying Out Graphs By Hand](#laying-out-graphs-by-hand)
 -   [Plotting Affiliation Graphs](#plotting-affiliation-graphs)
 
+Download the R script for this tutorial [here](intro-igraph.R)
+
 Back to [main page](README.md).
 
 ### Getting Started
