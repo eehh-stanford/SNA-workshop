@@ -6,8 +6,6 @@
 -   [Different types of networks](#different-types-of-networks)
 -   [Basic node measurements](#basic-node-measurements)
 -   [Basic network measurements](#basic-network-measurements)
--   [Basic network measurements](#basic-network-measurements-1)
--   [Basic network measurements](#basic-network-measurements-2)
 -   [Basic edge measurements](#basic-edge-measurements)
 -   [Network datasets](#network-datasets)
 -   [Network data](#network-data)
@@ -105,31 +103,15 @@ As with non-relational datasets, before building statistical models, you should 
 
 ### Basic network measurements
 
-Degree: <span style="color:red"> The number of contacts of node *n*. </span>
-
-Betweenness
-
-Closeness
+**Degree:** The number of contacts of node *n*.
 
 ![](intro-SNA_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
-### Basic network measurements
-
-Degree: <span style="color:red"> The number of contacts of node *n*. </span>
-
-Betweenness: <span style="color:green"> The number of shortest paths between any other two nodes that *n* falls on. </span>
-
-Closeness
+**Betweenness:** The number of shortest paths between any other two nodes that *n* falls on.
 
 ![](intro-SNA_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-### Basic network measurements
-
-Degree: <span style="color:red"> The number of contacts of node *n*. </span>
-
-Betweenness: <span style="color:green"> The number of shortest paths between any two nodes that *n* falls on. </span>
-
-Closeness: <span style="color:blue"> The inverse of the sum of the shortest paths between *n* and every other node in the network. </span>
+**Closeness:** <span style="color:blue"> The inverse of the sum of the shortest paths between *n* and every other node in the network. </span>
 
 ![](intro-SNA_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
