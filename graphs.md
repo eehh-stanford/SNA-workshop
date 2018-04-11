@@ -1,4 +1,4 @@
-# Graph concepts and measures
+## Graph concepts and measures
 
 -   [Introduction](#introduction)
     -   [Subgraphs, Walks, Paths, Reachability, Connectedness](#subgraphs-walks-paths-reachability-connectedness)
@@ -24,7 +24,11 @@
 
 A **graph** is simply a collection of vertices (or nodes) and edges (or ties). We can denote this 𝒢(*V*, *E*), where *V* is the vertex set and *E* is the edge set. The vertices of the graph represent the actors in the social system. These are usually individual people, but they could be households, geographical localities, institutions, or other social entities. The edges of the graph represent the relations between these entities (e.g., "is friends with" or "has sexual intercourse with" or "sends money to"). These edges can be directed (e.g., "sends money to") or undirected (e.g., "within 2 meters of"). When the relations that define the graph are directional, we have a directed graph or **digraph**. The edges in a graph connect unordered pairs of vertices and are sometimes called **lines**. The edges in a digraph connect ordered pairs of vertices and are sometimes called **arcs**. Graphs (and digraphs) can be binary (i.e., presence/absence of a relationship) or valued (e.g., "groomed five times in the observation period", "sent $100"). When an edge connects to a vertex, it is said to be **incident** to that vertex. The number of edges that are incident to vertex *v*<sub>*i*</sub> is the **degree** of *v*<sub>*i*</sub> and the collection of all degrees of a graph is known as the **degree distribution**. A vertex with degree zero is an **isolate**. The number of vertices in a graph is the **order** of the graph.
 
-A graph (with no self-loops) with *n* vertices has  <img src="https://latex.codecogs.com/svg.latex?\Large&space;{n\choose{2}}=n(n-1)/2"/> possible unordered pairs. This number (which increases very rapidly with *n*) is important for defining the **density** of a graph, which is the fraction of all possible relations that actually exist in a network.
+A graph (with no self-loops) with *n* vertices has  
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{n\choose{2}}=n(n-1)/2"/> 
+
+possible unordered pairs. This number (which increases very rapidly with *n*) is important for defining the **density** of a graph, which is the fraction of all possible relations that actually exist in a network.
 
 The most basic non-trivial graph is a connected dyad. Note that a **dyad** is simply a pair of vertices, connected or not. This graph has two vertices and a single edge. We can create and visualize this graph using `igraph`.
 
@@ -244,10 +248,9 @@ We are often interested in evaluating how an observed social network differs fro
 
 #### Dyad Census
 
-A **dyad** is simply an unordered pair of vertices in a graph. As we have discussed previously, there are <img src="https://latex.codecogs.com/svg.latex?\Large&space;{n\choose{2}}=n(n-1)/2"/> dyads in an (undirected) graph of size *n*.
+A **dyad** is simply an unordered pair of vertices in a graph. As we have discussed previously, there are <img src="https://latex.codecogs.com/svg.latex?\Large&space;n(n-1)/2"/> dyads in an (undirected) graph of size *n*.
 
-In a directed graph, there are four different types of relations between vertices *i* and *j*: *i* → *j*, *i* ← *j*, *i* U+2194 *j* and *i*  *j*.
-
+In a directed graph, there are four different types of relations between vertices *i* and *j*:
 ``` r
 g <- graph( c( 1,2, 3,4, 5,6, 6,5), n=8)
 ccc <- cbind(c(300, 100, 100, 300, 100, 300, 100, 300),  
@@ -257,7 +260,7 @@ plot(g, layout=ccc, vertex.color=grey(0.75))
 
 ![](graphs_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
-Note that *i* → *j*, and *i* ← *j* are isomorphic.
+Note that the two assymetrical relationships (*i* → *j* and *i* ← *j*) are isomorphic.
 
 #### Triad Census
 
@@ -389,17 +392,17 @@ title("ISDB")
 
 ![](graphs_files/figure-markdown_github/unnamed-chunk-18-1.png)
 
-Consequently, transitivity seems to be a sort of default for triadic interactions. This is an interesting observation because it suggests that when there is an excess of 030C triads, some sort of energy has been added to the system. Using data from an experimental hierarchy of chickens, Chase (1982) shows that the majority of triads (17/23) form with the DD sequence, followed by the DS (4/23). The remaining two triads formed by BDID and ISDB (one each). Chase (1982: 229) suggested that "Winning begets winning": winners go on to dominate bystanders rather than the other way around. Relationship to testosterone winner effects??
+Consequently, transitivity seems to be a sort of default for triadic interactions. This is an interesting observation because it suggests that when there is an excess of 030C triads, some sort of energy has been added to the system. Using data from an experimental hierarchy of chickens, Chase (1982) shows that the majority of triads (17/23) form with the DD sequence, followed by the DS (4/23). The remaining two triads formed by BDID and ISDB (one each). Chase (1982: 229) suggested that "Winning begets winning": winners go on to dominate bystanders rather than the other way around. <!--Relationship to testosterone winner effects??-->
 
 #### Are Triads Important?
 
-Since the early work of Simmel, triads have played a central role in structural theories of human action (e.g., Evans-Pritchard (1929) and eventually Heider (1958) on structural balance, Granovetter (1973) on weak ties, Chase (1982) on triads and hierarchies as discussed above, Coleman (1988) on network closure, Burt (1992) on structural holes). However, Faust (2007, <-@faust2008>, <-@faust2010>) has shown that &gt;90% of the variance in triad distributions can be accounted for by lower-level features of networks such as edge density and the dyad census. Furthermore, triads have been shown to be highly problematic in regression models for social networks. Inclusion of triangle terms in exponential random graph models makes model degeneracy likely. Handcock (2003) has shown that the constraints on triangles imposed by edge density can be quite severe, making the MCMC-based estimation of ergms very difficult.
+Since the early work of Simmel, triads have played a central role in structural theories of human action (e.g., Evans-Pritchard (1929) and eventually Heider (1958) on structural balance, Granovetter (1973) on weak ties, Chase (1982) on triads and hierarchies as discussed above, Coleman (1988) on network closure, Burt (1992) on structural holes). However, Faust (2007, 2008, 2010) has shown that &gt;90% of the variance in triad distributions can be accounted for by lower-level features of networks such as edge density and the dyad census. Furthermore, triads have been shown to be highly problematic in regression models for social networks. Inclusion of triangle terms in exponential random graph models makes model degeneracy likely. Handcock (2003) has shown that the constraints on triangles imposed by edge density can be quite severe, making the MCMC-based estimation of ergms very difficult.
 
-Faust (2010) shows that triads are still important. Shared edgewise partnerships save triads in ergms.
+Faust (2010) shows that triads are still important. Although triads may not describe much of the variance in the networks generated with restricted choice methods (e.g., where respondents are limited in their number of alters), triads are a distinguishing feature of human social networks that are not characteristic of random networks.
 
 #### Signed Graphs and Structural Balance
 
-In 1929, pioneering British social anthropologist E.E. Evans-Pritchard, known as "EP" to his contemporaries and students, wrote a short paper for *Man*, the journal of the Royal Anthropological Institute (Evans-Pritchard 1929). He noted a paradox: Sons among the Azande of present-day South Sudan treated their mothers with cool detachment and frequent contempt, depsite the fact that Azande mothers would dote on their sons. Why was this? EP's reasoning is an early example of relational thinking. EP argued that the tense relationship bet: "Therefore to grasp the full meaning of the -mother relationship we have to take into account not only the whole complex of mutual obligations and privileges standardized modes of behavior, biological and legal affinities and terms of nomenclature composing this relationship, but we have equally to study those which compose the husband-wife and father-son relationships." The son grows up seeing his father treat his mother with diffidence and contempt and because the favor of the father is all-important for the Zande boy, he aligns his affect with that of his father.
+In 1929, pioneering British social anthropologist E.E. Evans-Pritchard, known as "EP" to his contemporaries and students, wrote a short paper for *Man*, the journal of the Royal Anthropological Institute (Evans-Pritchard 1929). He noted a paradox: Sons among the Azande of present-day South Sudan treated their mothers with cool detachment and frequent contempt, despite the fact that Azande mothers would dote on their sons. Why was this? EP's reasoning is an early example of relational thinking. EP argued that the tense relationship bet: "Therefore to grasp the full meaning of the son-mother relationship we have to take into account not only the whole complex of mutual obligations and privileges standardized modes of behavior, biological and legal affinities and terms of nomenclature composing this relationship, but we have equally to study those which compose the husband-wife and father-son relationships." The son grows up seeing his father treat his mother with diffidence and contempt and because the favor of the father is all-important for the Zande boy, he aligns his affect with that of his father.
 
 We can represent this triadic relationship using a signed graph, in which the edges of the graph contain weights of +1 if the relationship is positive and −1 if they are negative. Calculating the product of the cycles provides a way of assessing the stability of the structure. If the overall sign of the triad is negative, then its relations are out-of-balance. If they are positive, on the other hand, they are balanced and we expect a more harmonious, stable structure. We can represent the edge weights by coloring the edges green for positive and red for negative. The two stable configurations for a signed triad are either all positive or, as suggested by EP for Zande father-mother-son triads, two negative and one positive.
 
@@ -419,7 +422,7 @@ plot(EP, layout=tri.coords,
 
 ![](graphs_files/figure-markdown_github/unnamed-chunk-19-1.png)
 
-Evans-Pritchard's idea of the importance of positive cycles was more fully elaborated in Heider's theory of structural balance. Moody and White biconnectivity, etc.
+Evans-Pritchard's idea of the importance of positive cycles was more fully elaborated in Heider's theory of structural balance. <!--Moody and White biconnectivity, etc.-->
 
 <!--# Centrality
 When we first read a graph into `R`, it is generally a good idea to explore it a bit to get a sense of its overall properties. The best place to start is with the graph summary. We can use Padgett's data on Florentine marriages to explore the analysis of graphs using igraph.
@@ -491,7 +494,7 @@ plot(gflo1, vertex.color="lightblue")
 
 The number of unordered pairs of vertices in a graph of size *n* is *n*(*n* − 1)/2. This means that the **density** of edges in a graph is simply given by the ratio of the number of observed edges to the number of possible edges, 2*e*/*n*(*n* − 1), where *e* is the number of edges in the graph.
 
-We can use Padgett's data on Florentine marriages to explore some of the properties with more complex networks.
+We can use Padgett's data on Florentine marriages to explore some of the properties of more complex networks.
 
 ``` r
 require(igraph)
@@ -581,7 +584,7 @@ where *g*<sub>*j**k*</sub> is the number of geodesics linking actors *j* and *k*
 
 #### Other measures of centrality
 
-**Informational centrality**
+**Information centrality**
 
 Another notion of centrality is that a central person is someone who knows people who know a lot of people. This idea can be captured using a measure known as **information centrality**. The calculation of information centrality is a bit more complicated than for the other three measures and requires some linear algebra. Start with the sociomatrix **X**. From this, we calculate an intermediate matrix **A**. For a binary relation, *a*<sub>*i**j*</sub> = 0 if *x*<sub>*i**j*</sub> = 1 and *a*<sub>*i**j*</sub> = 1 if *x*<sub>*i**j*</sub> = 0 for *i* ≠ *j* (that is, the non-diagonal elements of **A** are the complements of their values in **X**). The diagonal elements of **A** (*a*<sub>*i**i*</sub>) are simply the degree of vertex *i* plus one, *a*<sub>*i**i*</sub> = *d*(*v*<sub>*i*</sub>)+1. Once we have **A**, we invert it yielding a new matrix **C****A**<sup>−1</sup>. We then calculate *T*, the trace of **C**, which is simply the sum of its diagonal elements and *R* which is one of the row sums of **C** (they are all the same). Information centrality is then simply
 
@@ -609,7 +612,8 @@ infocentral <- function(X){
 
 Yet another approach to centrality was suggested by Bonacich (1972). He suggests that the eigenvectors of the sociomatrix are a fruitful way of thinking about centrality. As with information centrality, the eigenvector approach captures the idea that central people will have well-connected alters but that the relative importance of these alters falls off with distance from ego. While the eigenvector (preferably the dominant one) of the sociomatrix is an excellent measure of centrality, the metric Bonacich (1987) suggests is actually a bit more complex:
 
-*C*(*α*, *β*)=*α*(**I** − *β***X**)<sup>−1</sup>**X****1**,
+<!--*C*(*α*, *β*)=*α*(**I** − *β***X**)<sup>−1</sup>**X****1**,-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C(\alpha\beta)=\alpha(\mathbf{I}-\Beta\mathbf{X})^{-1}\mathbf{X1}"/> 
 
 where *α* is a parameter, *β* measures the extent to which an actor's status is a function of the statuses of its alters decay of influence from the focal actor, **I** is an identity matrix of the same rank as the sociomatrix **X**, and **1** is a column vector of ones.
 
