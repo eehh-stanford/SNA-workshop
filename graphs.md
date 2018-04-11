@@ -579,6 +579,7 @@ where *d*(*v*<sub>*i*</sub>, *v*<sub>*j*</sub>) is the distance (measured as t
 For non-directed graphs, the betweenness centrality of vertex *i* is the fraction of all geodesics in the graph on which *i* lies:
 
 *C*<sub>*B*</sub>(*v*<sub>*i*</sub>)=∑<sub>*j* &lt; *k*</sub>*g*<sub>*j**k*</sub>(*v*<sub>*i*</sub>)/*g*<sub>*j**k*</sub>,
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{B}(v_{i})"/> 
 
 where *g*<sub>*j**k*</sub> is the number of geodesics linking actors *j* and *k* and *g*<sub>*j**k*</sub>(*v*<sub>*i*</sub>) is the number of geodesics linking actors *j* and *k* that contain actor *i*. It can be standardized by dividing by the number of pairs of actors not including *i*, (*n* − 1)(*n* − 2)/2: *C*′<sub>*B*</sub>(*v*<sub>*i*</sub>)=*C*<sub>*B*</sub>(*v*<sub>*i*</sub>)/\[(*n* − 1)(*n* − 2)/2\].
 
@@ -586,9 +587,10 @@ where *g*<sub>*j**k*</sub> is the number of geodesics linking actors *j* and *k*
 
 **Information centrality**
 
-Another notion of centrality is that a central person is someone who knows people who know a lot of people. This idea can be captured using a measure known as **information centrality**. The calculation of information centrality is a bit more complicated than for the other three measures and requires some linear algebra. Start with the sociomatrix **X**. From this, we calculate an intermediate matrix **A**. For a binary relation, *a*<sub>*i**j*</sub> = 0 if *x*<sub>*i**j*</sub> = 1 and *a*<sub>*i**j*</sub> = 1 if *x*<sub>*i**j*</sub> = 0 for *i* ≠ *j* (that is, the non-diagonal elements of **A** are the complements of their values in **X**). The diagonal elements of **A** (*a*<sub>*i**i*</sub>) are simply the degree of vertex *i* plus one, *a*<sub>*i**i*</sub> = *d*(*v*<sub>*i*</sub>)+1. Once we have **A**, we invert it yielding a new matrix **C****A**<sup>−1</sup>. We then calculate *T*, the trace of **C**, which is simply the sum of its diagonal elements and *R* which is one of the row sums of **C** (they are all the same). Information centrality is then simply
+Another notion of centrality is that a central person is someone who knows people who know a lot of people. This idea can be captured using a measure known as **information centrality**. The calculation of information centrality is a bit more complicated than for the other three measures and requires some linear algebra. Start with the sociomatrix **X**. From this, we calculate an intermediate matrix **A**. For a binary relation, *a*<sub>*ij*</sub> = 0 if *x*<sub>*ij*</sub> = 1 and *a*<sub>*i**j*</sub> = 1 if *x*<sub>*ij*</sub> = 0 for *i* ≠ *j* (that is, the non-diagonal elements of **A** are the complements of their values in **X**). The diagonal elements of **A** (*a*<sub>*i**i*</sub>) are simply the degree of vertex *i* plus one, *a*<sub>*ii*</sub> = *d*(*v*<sub>*i*</sub>)+1. Once we have **A**, we invert it yielding a new matrix **CA**<sup>−1</sup>. We then calculate *T*, the trace of **C**, which is simply the sum of its diagonal elements and *R* which is one of the row sums of **C** (they are all the same). Information centrality is then simply
 
-$$ C\_I(v\_i) = \\frac{1}{d(v\_i) + (T - 2R)/n)}, $$
+<!--$$ C\_I(v\_i) = \\frac{1}{d(v\_i) + (T - 2R)/n}, $$-0-->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{I}(v_{i})=\frac{1}{d(v_{i})+(T-2R)/2}"/> 
 
 where, as usual, *d*(*v*<sub>*i*</sub>) is the degree of vertex *i* and *n* is the size of the graph.
 
