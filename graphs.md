@@ -582,18 +582,18 @@ For non-directed graphs, the closeness centrality of vertex *i* is the inverse o
 where *d*(*v*<sub>*i*</sub>, *v*<sub>*j*</sub>) is the distance (measured as the minimum distance or geodesic) between vertices *i* and *j*. Note that if any *j* is not reachable from *i*, *C*<sub>*C*</sub>(*v*<sub>*i*</sub>)=0 since the distance between *i* and *j* is infinite! This means that we often want to restrict our measurements of centrality to connected components of a graph. To standardize, we multiply by *n* − 1, the number of vertices not including *i*: 
 
 <!--*C*′<sub>*C*</sub>(*v*<sub>*i*</sub>)=(*n* − 1)*C*<sub>*C*</sub>(*v*<sub>*i*</sub>).-->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{C}(v_{i})=(n-1)C_{C}(v_{i})> 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{C}(v_{i})=(n-1)C_{C}(v_{i})"/> 
 
 #### Betweenness
 
 For non-directed graphs, the betweenness centrality of vertex *i* is the fraction of all geodesics in the graph on which *i* lies:
 
 <!--*C*<sub>*B*</sub>(*v*<sub>*i*</sub>)=∑<sub>*j* &lt; *k*</sub>*g*<sub>*j**k*</sub>(*v*<sub>*i*</sub>)/*g*<sub>*j**k*</sub>,-->
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{B}(v_{i})=]\sum_{j<k}{g_{jk}(v_{i})/g_{ik}}"/> 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{B}(v_{i})=\sum_{j<k}{g_{jk}(v_{i})/g_{jk}}"/> 
 
 where *g*<sub>*jk*</sub> is the number of geodesics linking actors *j* and *k* and *g*<sub>*jk*</sub>(*v*<sub>*i*</sub>) is the number of geodesics linking actors *j* and *k* that contain actor *i*. It can be standardized by dividing by the number of pairs of actors not including *i*, (*n* − 1)(*n* − 2)/2: 
 
-*C*′<sub>*B*</sub>(*v*<sub>*i*</sub>)=*C*<sub>*B*</sub>(*v*<sub>*i*</sub>)/\[(*n* − 1)(*n* − 2)/2\].
+<!--*C*′<sub>*B*</sub>(*v*<sub>*i*</sub>)=*C*<sub>*B*</sub>(*v*<sub>*i*</sub>)/\[(*n* − 1)(*n* − 2)/2\].-->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;C'_{B}(v_{i})=C_{B}(v_{i})/[(n-2)/2]"/> 
 
 #### Other measures of centrality
