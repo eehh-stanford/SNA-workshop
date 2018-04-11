@@ -562,7 +562,8 @@ In his classic essay, [Lin Freeman](http://moreno.ss.uci.edu/) (1978) lays out t
 
 For non-directed graphs, the degree centrality of vertex *i* is simply the sum of edges incident to *v*<sub>*i*</sub>:
 
-*C*<sub>*D*</sub>(*v*<sub>*i*</sub>)=*d*(*v*<sub>*i*</sub>)=∑<sub>*j*</sub>*x*<sub>*i**j*</sub> = ∑<sub>*j*</sub>*x*<sub>*j**i*</sub>.
+<!--*C*<sub>*D*</sub>(*v*<sub>*i*</sub>)=*d*(*v*<sub>*i*</sub>)=∑<sub>*j*</sub>*x*<sub>*i**j*</sub> = ∑<sub>*j*</sub>*x*<sub>*j**i*</sub> -->
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{C_{D}(v_{i})=d(v_{i]}=\sum_{j}{x_{ij}}=\sum_{j}{x_{ji}}"/> 
 
 Note that while we call this a "centrality" measure, it is simply the degree of node *i*. <!--This observation gets the fundamental confounding of degree-based and other centrality-based measures of social structure discussed in Salath\'{e} and Jones (2010).--> Sometimes degree centrality measure will be standardized by the size of the graph *n*: *C*′<sub>*D*</sub>(*v*<sub>*i*</sub>)=*d*(*v*<sub>*i*</sub>)/(*n* − 1), where we subtract one from the size of the graph to account for the actor itself.
 
@@ -571,6 +572,7 @@ Note that while we call this a "centrality" measure, it is simply the degree of 
 For non-directed graphs, the closeness centrality of vertex *i* is the inverse of the sum of geodesics between *v*<sub>*i*</sub> and *v*<sub>*j*</sub>,   *j* ≠ *i*:
 
 $$ C\_C(v\_i) = \\left\[ \\sum\_{j=1}^n d(v\_i,v\_j)\\right\]^{-1}, $$
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{C}(v_{i})=\left[\sum_{j=1}^{n}{d(v_{i},v_{j})}\right]^{-1}"/> 
 
 where *d*(*v*<sub>*i*</sub>, *v*<sub>*j*</sub>) is the distance (measured as the minimum distance or geodesic) between vertices *i* and *j*. Note that if any *j* is not reachable from *i*, *C*<sub>*C*</sub>(*v*<sub>*i*</sub>)=0 since the distance between *i* and *j* is infinite! This means that we often want to restrict our measurements of centrality to connected components of a graph. To standardize, we multiply by *n* − 1, the number of vertices not including *i*: *C*′<sub>*C*</sub>(*v*<sub>*i*</sub>)=(*n* − 1)*C*<sub>*C*</sub>(*v*<sub>*i*</sub>).
 
@@ -587,7 +589,7 @@ where *g*<sub>*j**k*</sub> is the number of geodesics linking actors *j* and *k*
 
 **Information centrality**
 
-Another notion of centrality is that a central person is someone who knows people who know a lot of people. This idea can be captured using a measure known as **information centrality**. The calculation of information centrality is a bit more complicated than for the other three measures and requires some linear algebra. Start with the sociomatrix **X**. From this, we calculate an intermediate matrix **A**. For a binary relation, *a*<sub>*ij*</sub> = 0 if *x*<sub>*ij*</sub> = 1 and *a*<sub>*i**j*</sub> = 1 if *x*<sub>*ij*</sub> = 0 for *i* ≠ *j* (that is, the non-diagonal elements of **A** are the complements of their values in **X**). The diagonal elements of **A** (*a*<sub>*i**i*</sub>) are simply the degree of vertex *i* plus one, *a*<sub>*ii*</sub> = *d*(*v*<sub>*i*</sub>)+1. Once we have **A**, we invert it yielding a new matrix **CA**<sup>−1</sup>. We then calculate *T*, the trace of **C**, which is simply the sum of its diagonal elements and *R* which is one of the row sums of **C** (they are all the same). Information centrality is then simply
+Another notion of centrality is that a central person is someone who knows people who know a lot of people. This idea can be captured using a measure known as **information centrality**. The calculation of information centrality is a bit more complicated than for the other three measures and requires some linear algebra. Start with the sociomatrix **X**. From this, we calculate an intermediate matrix **A**. For a binary relation, *a*<sub>*ij*</sub> = 0 if *x*<sub>*ij*</sub> = 1 and *a*<sub>*ij*</sub> = 1 if *x*<sub>*ij*</sub> = 0 for *i* ≠ *j* (that is, the non-diagonal elements of **A** are the complements of their values in **X**). The diagonal elements of **A** (*a*<sub>*i**i*</sub>) are simply the degree of vertex *i* plus one, *a*<sub>*ii*</sub> = *d*(*v*<sub>*i*</sub>)+1. Once we have **A**, we invert it yielding a new matrix **CA**<sup>−1</sup>. We then calculate *T*, the trace of **C**, which is simply the sum of its diagonal elements and *R* which is one of the row sums of **C** (they are all the same). Information centrality is then simply
 
 <!--$$ C\_I(v\_i) = \\frac{1}{d(v\_i) + (T - 2R)/n}, $$-0-->
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;C_{I}(v_{i})=\frac{1}{d(v_{i})+(T-2R)/2}"/> 
