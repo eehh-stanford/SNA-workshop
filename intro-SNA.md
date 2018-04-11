@@ -31,13 +31,11 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 ### Contextualizing SNA and relational data
 
 -   Derived from structural anthropology, but utilized in many fields
-
 -   Can measure network structure and/or simulate activity within a network
-
 -   The SNA endeavor can be highly computational **AND** highly ethnographic
 
        
-<table>
+<!--<table>
 <colgroup>
 <col width="33%" />
 <col width="18%" />
@@ -72,7 +70,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 <td align="center">Open interviews / Observation</td>
 </tr>
 </tbody>
-</table>
+</table>-->
 
 ### Network terminology
 
@@ -119,7 +117,6 @@ Sometimes you may only need descriptives of your network---***it depends on your
 ### Basic edge measurements
 
 -   Weighted edges
-
 -   Positive/negative ties
 
 ![](Fig3.png)
@@ -143,7 +140,6 @@ Sometimes you may only need descriptives of your network---***it depends on your
 | **alter5** |  1  |    1   |    0   |    0   |    1   |    -   |
 
 -   These characteristics reflect the tradeoffs of real-world data collection.
-
 -   Their affect on data visualization and analysis must be strategized at the outset of data collection.
 
 ### Network data
@@ -153,9 +149,7 @@ Let's assume you are going to collect "typical" network data: ego-centric networ
 You'll need to:
 
 -   Construct an appropriate set of name-generator questions.
-
 -   Select necessary/elicitable information about the contacts.
-
 -   Get linking information about each contact for ego-network "scale-up."
 
 #### Problems to consider
@@ -163,15 +157,12 @@ You'll need to:
 What if:
 
 -   You cannot get full names of contacts.
-
 -   Participants don't know much about their contacts.
-
 -   You don't know what kinds of contacts are meaningful.
 
 #### Setting up surveys
 
 -   Network data collection can actually be a fairly messy endeavor.
-
 -   Setting up your surveys to streamline the data prep step will save your sanity.
     -   Different research objectives call for very different set-ups.
 
@@ -192,7 +183,6 @@ Let's look at a couple of examples...
     -   You are asking participants to talk about other people's behaviors.
     -   You have to store identifiable information.
 -   Thinking like an ethnographer can be useful for improving reliability of responses.
-
 -   Trust participants' ability to understand your research goals.
     -   **Show and tell** them what you're doing & why.
 
@@ -202,7 +192,7 @@ Let's look at a couple of examples...
     -   An edgelist: **A dataset of ties and relationship characteristics**
     -   A vertexlist: **A dataset of node characteristics**
 
-<!-- -->
+<!---->
 
     ##       ego.id   alter.id relation
     ## 1 ETG-001-01 ETG-020-02        2
