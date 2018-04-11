@@ -18,7 +18,7 @@
 -   [Strategies for model-building](#strategies-for-model-building)
 -   [References](#references)
 
-You can download the data for this tutorial by [clicking here](bott.RData).
+Download the R script for this tutorial [here](ergm-intro.R) and the data [here](bott.RData).
 
 Back to [main page](README.md).
 
