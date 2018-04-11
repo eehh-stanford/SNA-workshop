@@ -234,4 +234,5 @@ Log-linear models of homophily
 
 <!--Epidemic models requiring highly detailed contact structures
 $$\\sum\_{j}(\\rho\_{k',ij}) = r\_{i}\\delta\_{i,j}+(1-r\_{i})(\\frac{(1-r\_{j})c\_{k',j}N\_{k',j}}{\\sum\_{j}(1-r\_{j})c\_{k',j}N\_{k',j})})$$
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\sum_{j}(\rho_{k',ij})=r_{i}\delta_{i,j}+(1-r_{i})()"/> 
 -   Travel/mobility or institutional data can be turned into bipartite networks. -->
