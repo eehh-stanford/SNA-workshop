@@ -34,7 +34,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 -   Can measure network structure and/or simulate activity within a network
 -   The SNA endeavor can be highly computational **AND** highly ethnographic
    
-<!--<table>
+<table>
 <colgroup>
 <col width="33%" />
 <col width="18%" />
@@ -69,7 +69,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 <td align="center">Open interviews / Observation</td>
 </tr>
 </tbody>
-</table>-->
+</table>
 
 ### Network terminology
 
