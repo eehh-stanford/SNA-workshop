@@ -1,3 +1,5 @@
+## Introduction to networks and network data collection
+
 -   [Background to the study of social structure](#background-to-the-study-of-social-structure)
 -   [Contextualizing SNA and relational data](#contextualizing-sna-and-relational-data)
 -   [Network terminology](#network-terminology)
@@ -9,18 +11,13 @@
 -   [Basic edge measurements](#basic-edge-measurements)
 -   [Network datasets](#network-datasets)
 -   [Network data](#network-data)
--   [Network data: problems to consider](#network-data-problems-to-consider)
--   [Network data: Setting up surveys](#network-data-setting-up-surveys)
--   [Highly structured](#highly-structured)
--   [Less structured](#less-structured)
+    -   [Problems to consider](#problems-to-consider)
+    -   [Setting up surveys](#setting-up-surveys)
 -   [Ethics and sensitivity](#ethics-and-sensitivity)
 -   [Cleaning network data (is miserable)](#cleaning-network-data-is-miserable)
 -   [Data flexibility](#data-flexibility)
 
-Background to the study of social structure
-===========================================
-
- 
+### Background to the study of social structure
 
 Modern social-network analysis (SNA) has its roots in anthropology, particularly structuralism (Radcliffe-Brown's *On Social Structure*, 1940).
 
@@ -33,10 +30,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 
 -   Study of social structure is not a deviation from natural science: physics (atomic); chemistry (molecular); biology (cellular); anthropology/ethology (social)
 
-Contextualizing SNA and relational data
-=======================================
-
- 
+### Contextualizing SNA and relational data
 
 -   Derived from structural anthropology, but utilized in many fields
 
@@ -101,8 +95,7 @@ Contextualizing SNA and relational data
 </tbody>
 </table>
 
-Network terminology
-===================
+### Network terminology
 
 Basic terms to get familiar with:
 
@@ -113,16 +106,14 @@ Basic terms to get familiar with:
 <p align="center">
 ![](AH_SNA_images/Fig%201.png)
 </p>
-Different types of networks
-===========================
+
+### Different types of networks
 
 <p align="center">
 ![](/Users/ashleyhazel/Box%20Sync/social_networks/teaching_materials/AH_SNA_images/Fig%202.png)
 </p>
-Basic node measurements
-=======================
 
- 
+### Basic node measurements
 
 As with non-relational datasets, before building statistical models, you should explore key features of your data.
 <span style="font-size: 0.75em;">(Sometimes you may only need descriptives of your network---***it depends on your research question!***)</span>
@@ -135,8 +126,7 @@ As with non-relational datasets, before building statistical models, you should 
 
 3.  Closeness
 
-Basic network measurements
-==========================
+### Basic network measurements
 
 Degree: <span style="color:red"> The number of contacts of node *n*. </span>
 
@@ -146,8 +136,7 @@ Closeness
 
 <img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
-Basic network measurements
-==========================
+### Basic network measurements
 
 Degree: <span style="color:red"> The number of contacts of node *n*. </span>
 
@@ -157,8 +146,7 @@ Closeness
 
 <img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
-Basic network measurements
-==========================
+### Basic network measurements
 
 Degree: <span style="color:red"> The number of contacts of node *n*. </span>
 
@@ -168,8 +156,7 @@ Closeness: <span style="color:blue"> The inverse of the sum of the shortest path
 
 <img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
 
-Basic edge measurements
-=======================
+### Basic edge measurements
 
 -   Weighted edges
 
@@ -178,8 +165,8 @@ Basic edge measurements
 <p align="center">
 ![](/Users/ashleyhazel/Box%20Sync/social_networks/teaching_materials/AH_SNA_images/Fig%203.png)
 </p>
-Network datasets
-================
+
+### Network datasets
 
 -   Typically (but not obiligatorily) a field-collected "network" dataset is:
     -   ego-centric (as opposed to a complete sociomatrix)
@@ -200,8 +187,7 @@ Network datasets
 
 -   Their affect on data visualization and analysis must be strategized at the outset of data collection.
 
-Network data
-============
+### Network data
 
 Let's assume you are going to collect "typical" network data: ego-centric networks
 
@@ -213,8 +199,7 @@ You'll need to:
 
 -   Get linking information about each contact for ego-network "scale-up."
 
-Network data: problems to consider
-==================================
+#### Problems to consider
 
 What if:
 
@@ -224,8 +209,7 @@ What if:
 
 -   You don't know what kinds of contacts are meaningful.
 
-Network data: Setting up surveys
-================================
+#### Setting up surveys
 
 -   Network data collection can actually be a fairly messy endeavor.
 
@@ -234,20 +218,19 @@ Network data: Setting up surveys
 
 \*Let's look at a couple of examples...
 
-Highly structured
-=================
+**Highly structured**
 
 <p align="center">
 ![](AH_SNA_images/BF_survey.png)
 </p>
-Less structured
-===============
+
+**Less structured**
 
 <p align="center">
 ![](AH_SNA_images/Himba%20survey.jpg)
 </p>
-Ethics and sensitivity
-======================
+
+### Ethics and sensitivity
 
 -   Relational data presents a special case for field and data-care ethics.
     -   You might be asking about senstive behaviors (sex, drugs, places they go, power dynamics).
@@ -258,8 +241,7 @@ Ethics and sensitivity
 -   Trust participants' ability to understand your research goals.
     -   **Show and tell** them what you're doing & why.
 
-Cleaning network data (is miserable)
-====================================
+### Cleaning network data (is miserable)
 
 -   From your sureys and fieldnotes, you will need to create:
     -   An edgelist: **A dataset of ties and relationship characteristics**
@@ -287,8 +269,7 @@ Cleaning network data (is miserable)
     -   Entity resolution
     -   Organizing name-generator questions
 
-Data flexibility
-================
+### Data flexibility
 
 -   Network dataframes can be converted into matrices for different types of analyses.
 
