@@ -1,7 +1,7 @@
 # Graph concepts and measures
 
 -   [Introduction](#introduction)
-    -   [Subgraphs, Walks, Paths, Reachability, Connectedness](#subgraphs-walks-paths-reachability-connectedness)
+    -   [Subgraphs, Walks, Paths, Reachability, Connectedness](#subgraphs-walks-paths-reachability-connectedness)
     -   [Degree and Degree Distributions](#degree-and-degree-distributions)
     -   [Geodesics](#geodesics)
     -   [Edgelists and Other Graph Formats](#edgelists-and-other-graph-formats)
