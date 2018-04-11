@@ -82,16 +82,17 @@ Basic terms to get familiar with:
 -   edge/tie
 -   graph
 
-![](AH_SNA_images/Fig1.png)
+![](Fig1.png)
 
 ### Different types of networks
 
-![](AH_SNA_images/Fig2.png)
+![](Fig2.png)
 
 ### Basic node measurements
 
 As with non-relational datasets, before building statistical models, you should explore key features of your data.
-<span style="font-size: 0.75em;">(Sometimes you may only need descriptives of your network---***it depends on your research question!***)</span>
+
+Sometimes you may only need descriptives of your network---***it depends on your research question!***)
 
 3 important nodal measurements to know and understand are:
 
@@ -121,7 +122,7 @@ As with non-relational datasets, before building statistical models, you should 
 
 -   Positive/negative ties
 
-![](AH_SNA_images/Fig3.png)
+![](Fig3.png)
 
 
 ### Network datasets
