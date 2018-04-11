@@ -140,6 +140,7 @@ Sometimes you may only need descriptives of your network---***it depends on your
 | **alter5** |  1  |    1   |    0   |    0   |    1   |    -   |
 
 
+
 -   These characteristics reflect the tradeoffs of real-world data collection.
 -   Their affect on data visualization and analysis must be strategized at the outset of data collection.
 
