@@ -84,7 +84,7 @@ Basic terms to get familiar with:
 -   edge/tie
 -   graph
 
-![](AH_SNA_images/Fig%1.png)
+![](AH_SNA_images/Fig1.png)
 
 ### Different types of networks
 
@@ -111,7 +111,7 @@ Betweenness
 
 Closeness
 
-<img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+![](intro-SNA_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 ### Basic network measurements
 
@@ -121,7 +121,7 @@ Betweenness: <span style="color:green"> The number of shortest paths between any
 
 Closeness
 
-<img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+![](intro-SNA_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 ### Basic network measurements
 
@@ -131,7 +131,7 @@ Betweenness: <span style="color:green"> The number of shortest paths between any
 
 Closeness: <span style="color:blue"> The inverse of the sum of the shortest paths between *n* and every other node in the network. </span>
 
-<img src="intro-SNA_files/figure-markdown_github/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+![](intro-SNA_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
 ### Basic edge measurements
 
@@ -139,9 +139,8 @@ Closeness: <span style="color:blue"> The inverse of the sum of the shortest path
 
 -   Positive/negative ties
 
-<p align="center">
 ![](AH_SNA_images/Fig3.png)
-</p>
+
 
 ### Network datasets
 
@@ -193,19 +192,15 @@ What if:
 -   Setting up your surveys to streamline the data prep step will save your sanity.
     -   Different research objectives call for very different set-ups.
 
-\*Let's look at a couple of examples...
+Let's look at a couple of examples...
 
 **Highly structured**
 
-<p align="center">
 ![](AH_SNA_images/BF_survey.png)
-</p>
 
 **Less structured**
 
-<p align="center">
 ![](AH_SNA_images/Himba_survey.jpg)
-</p>
 
 ### Ethics and sensitivity
 
