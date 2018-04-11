@@ -84,15 +84,11 @@ Basic terms to get familiar with:
 -   edge/tie
 -   graph
 
-<p align="center">
-![](AH_SNA_images/Fig%201.png)
-</p>
+![](AH_SNA_images/Fig%1.png)
 
 ### Different types of networks
 
-<p align="center">
 ![](AH_SNA_images/Fig2.png)
-</p>
 
 ### Basic node measurements
 
