@@ -1,18 +1,16 @@
--   [Importing network data into R](#importing-network-data-into-r)
-    -   [Edgelists](#edgelists)
-        -   [Creating your edgelist](#creating-your-edgelist)
-        -   [Importing an edgelist](#importing-an-edgelist)
-        -   [Loading up individual attributes](#loading-up-individual-attributes)
-    -   [Sociomatrices](#sociomatrices)
-    -   [From affiliation data to a network (bipartite networks)](#from-affiliation-data-to-a-network-bipartite-networks)
-    -   [The `intergraph` package](#the-intergraph-package)
+## Importing network data into R
 
-------------------------------------------------------------------------
+-   [Edgelists](#edgelists)
+    -   [Creating your edgelist](#creating-your-edgelist)
+    -   [Importing an edgelist](#importing-an-edgelist)
+    -   [Loading up individual attributes](#loading-up-individual-attributes)
+-   [Sociomatrices](#sociomatrices)
+-   [From affiliation data to a network (bipartite networks)](#from-affiliation-data-to-a-network-bipartite-networks)
+-   [The `intergraph` package](#the-intergraph-package)
 
 Back to [main page](README.md).
 
-Importing network data into R
------------------------------
+------------------------------------------------------------------------
 
 Getting your network data into the right format to analyze it can be a surprisingly difficult task that is not often addressed in social network analysis textbooks and courses. Here we go over some of the basics of formatting and importing network data.
 
