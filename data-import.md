@@ -41,8 +41,8 @@ To code up an edgelist from fieldnotes or other unstructured datasets, each time
 Here's a few examples of supportive interactions between Hogwarts students, and how I would code them up as support ties:
 
 -   "Oh, yes," said Luna \[to Harry\], "I've been able to see them since my first day here. They've always pulled the carriages. Don't worry. You're just as sane as I am." Chapter 10, p. 180
--   "Harry, you're the best in the year at Defence against the Dark Arts, " said Hermione. Chapter 15, p. 292
--   "That was quite good," Harry lied, but when she \[Cho\] raised her eyebrows he said, "Well, no, it was lousy, but I know you can do it propoerly, I was watching from over there." Chapter 18, p. 350
+-   "Harry, you're the best in the year at Defence Against the Dark Arts, " said Hermione. Chapter 15, p. 292
+-   "That was quite good," Harry lied, but when she \[Cho\] raised her eyebrows he said, "Well, no, it was lousy, but I know you can do it properly, I was watching from over there." Chapter 18, p. 350
 
 | From               | To                 |  Chapter|  Page|
 |:-------------------|:-------------------|--------:|-----:|
