@@ -126,14 +126,15 @@ plot(hp5netfull, vertex.shape="none", vertex.label.cex=0.6, edge.arrow.size=0.4,
 
 **Duplicate ties**
 
-A common problem is that you might have an edgelist where the same edges are present more than once. For instance, you might have observed two monkeys groom each other on multiple occasions, and recorded each occurrence separately; or, if you interviewed both the ego and alter, the same tie might appear more than once (e.g., Ron said he was friends with Harry, and Harry reported the same thing).
+A common problem (or feature) of edgelists is that the same edges may be present more than once. For instance, you might have observed two monkeys groom each other on multiple occasions, and recorded each occurrence separately; or, if you interviewed both the ego and alter, the same tie might appear more than once (e.g., Ron said he was friends with Harry, and Harry reported the same thing).
 
 If you just want to remove duplicate edges, you can use the same `simplify()` functions used above to remove self-loops. But, you might prefer to count the number of times an edge appeared and use it as an edge value.
 
-Let's add some duplicates edges to our Book 5 edgelist, then use the `aggregate()` functions to count occurrences.
+Let's add some duplicate edges to our Book 5 edgelist, then use the `aggregate()` functions to count occurrences.
 
 ``` r
-hp5newedges <- data.frame(rbind(hp5edges, c("Harry James Potter", "Ronald Weasley"), 
+hp5newedges <- data.frame(rbind(hp5edges, 
+                                c("Harry James Potter", "Ronald Weasley"), 
                                 c("Ronald Weasley", "Harry James Potter"), 
                                 c("Hermione Granger", "Ronald Weasley"), 
                                 c("Hermione Granger", "Harry James Potter"), 
@@ -203,7 +204,7 @@ Cool!
 
 Network data may also be formatted as a **sociomatrix**, which is a square matrix where the rows and columns represent individuals in the network and the cell values represent the ties between them (valued or 0/1 for unvalued). In general, it is impractical to record data in this format. In most cases, trying to record data in a sociomatric means you will be constantly scrambling to add more columns and rows that will be mostly filled with zeroes. Much better to maintain a list of individuals and edges as they appear.
 
-Sociomatrices are more useful when there is a non-zero value in most cells (i.e., the data are not sparse). Such is the case when the relationship between nodes involves some kind of distance metric (e.g., physical distance between households or relatedness coefficients). Distance matrices like these are very useful to include as edge covariates in an ERGM, for example, but you will not usually generate such matrices by hand. Instead, you will likely generate these matrices in `R` or some other software program using calculations based off other data (e.g., latitude and longitude coordinates).
+Sociomatrices are more useful when there is a non-zero value in most cells (i.e., the data are not sparse). Such is the case when the relationship between nodes involves some kind of distance metric (e.g., physical distance between households or relatedness coefficients). Distance matrices like these are often important covariates of other networks (e.g., relatedness and physical distance often correlate with ties of support between individuals), but you will not usually generate such matrices by hand. Instead, you will likely generate distance matrices in `R` or some other software program using calculations based off other data (e.g., latitude and longitude coordinates).
 
 Here's how to import a sociomatrix (and get it correctly lined up with your attribute data).
 
@@ -241,7 +242,7 @@ dim(hp5df) #much better
 
     ## [1] 64 64
 
-Now the data is loaded correctly but we still have a problem. This sociomatrix has dimensions of 64x64, meaning there are 64 students in the network, but from before, we know that only 34 students actually appear in Book 5. This discrepancy is because Bossart and Meidert included all students who appeared in support relationships in ANY of the first six books so that they could do a temporal analysis. We'd prefer just to look at the students who appear in Book 5, so we need to remove these other students.
+Now the data is loaded correctly but we still have a problem. This sociomatrix has dimensions of 64x64, meaning there are 64 students in the network, but from before, we know that only 34 students actually appear in Book 5. This discrepancy is because Bossart and Meidert included all students who appeared in support relationships in ANY of the first six books so that they could do a temporal analysis. I'd prefer just to look at the students who appear in Book 5, so I need to remove these other students.
 
 ``` r
 #start by adding row and column names to our sociomatrix
@@ -271,7 +272,7 @@ Now we can proceed as before to remove self-loops and assign attributes.
 
 Sometimes networks may be generated from data on the presence or absence of individuals at certain place or time. To convert an affiliation (person by event) matrix to a person-to-person network, simply multiply the affiliation matrix by its transpose. See the [Introduction to igraph](intro-igraph.md) tutorial for an example.
 
-Before doing this though, carefully consider what an affiliation matrix means in terms of relationships between persons. Does belonging to the same house at Hogwarts really mean that two students know each other? Maybe not. But does membership in Dumbledore's Army mean that they would know each other? Almost certainly. Not all group, place, or event affiliations correspond to relationships between persons that are meaningful with respect to your research question.
+Before doing this though, carefully consider what an affiliation matrix means in terms of relationships between persons. Not all group, place, or event affiliations correspond to relationships between persons that are meaningful with respect to your research question.
 
 ### The `intergraph` package
 
