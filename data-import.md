@@ -50,7 +50,7 @@ Here's a few examples of supportive interactions between Hogwarts students, and 
 | Hermione Granger   | Harry James Potter |       15|   292|
 | Harry James Potter | Cho Chang          |       18|   350|
 
-The columns "Chapter" and "Page" might not be necessary for any analysis I want to do, but they help me find the original data again in the future, in case I needed to doublecheck somehing, and they also allow me to distinguish duplicate ties between characters. If I were coding such data for a real project, I would probably also record some details about the specific nature and nature of the interaction.
+The columns "Chapter" and "Page" might not be necessary for any analysis I want to do, but they help me find the original data again in the future, in case I needed to double check somehing, and they also allow me to distinguish duplicate ties between characters. If I were coding such data for a real project, I would probably also record some details about the specific nature and context of the interaction.
 
 A similar procedure could be used to code up networks from field notes, although, obviously, you will have to make careful decisions about how to classify interactions, and about how you are sampling interactions among individuals. Such decisions should usually be made *a priori* (ideally with the benefit of a pilot study). If you are encoding relations that you view as constituting different networks, the easiest solution is usually to maintain separate edgelists for each type of relation.
 
