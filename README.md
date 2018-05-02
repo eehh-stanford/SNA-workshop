@@ -18,6 +18,7 @@ These materials will guide you through installing the software needed for the wo
 These are the topics we will cover in the workshop:
 
 - [Introduction to networks and network data collection](intro-SNA.md)
+- [Data formatting and import](data-import.md)
 - [Introduction to igraph](intro-igraph.md)
 - [Introduction to ERGMs](ergm-intro.md)
 
