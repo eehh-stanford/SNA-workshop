@@ -304,4 +304,4 @@ hp5network
     ## 
     ## No edge attributes
 
-Easy-peasy. Note that `igraph` does support not network level attributes (indicated with `%n%` in statnet). So, if you convert an object from `statnet` to `igraph` you will lose these. Edge and vertex attributes are carried over, however.
+Easy-peasy. Note that `igraph` does not support network level attributes (indicated with `%n%` in statnet). So, if you convert an object from `statnet` to `igraph` you will lose these. Edge and vertex attributes are carried over, however.
