@@ -56,7 +56,7 @@ A similar procedure could be used to code up networks from field notes, although
 
 As a sidenote here, we cannot stress enough how important your sampling of interactions in a network is to the conclusions that you can draw from the data. For example, although the Harry Potter data we're examining here is a complete sample of student support interactions in the books, if this were a real ethnographic study of support ties among students in a school, the data would have a severe sampling bias. This is because this dataset only contains interactions among individuals that occur in the presence of Harry Potter. We don't know what the students might say to each other when Harry isn't around; so we can almost be certain that this network will show that Gryffindors are more supportive of each other than Slytherins are. Slytherins might actually be very supportive of each other, but because we've only sampled what Harry experiences, the sample is biased towards interactions between Gryffindors and of course, interactions with Harry himself. Although this may seem like a silly example, this is actually an important point to remember for any fieldworker planning to construct networks from observational data. How do your research participants (human or otherwise) interact when you're not around? Like Harry Potter, you are the centre of your own universe and the interactions you observe may not be a representative sample. You need to carefully design your study and sampling strategy to address these potential biases (see [Altmann 1974](https://www.jstor.org/stable/4533591) for a great discussion of these issues).
 
-Finally, if your edgelist is based on a name generator or other survey-based network data collection method, it should be straightforward to generate an edgelist---the main difficulty with these methods is usually entity resolution.
+Finally, if your network data comes from a name generator or other survey-based network data collection method, it should be straightforward to generate an edgelist---the main difficulty with these methods is usually entity resolution.
 
 #### Importing an edgelist
 
@@ -69,7 +69,7 @@ hp5edges <- read.table("hp5edgelist.txt", sep="\t", header=TRUE)
 head(hp5edges)
 ```
 
-    ##          X.From.              X.To.
+    ##             From                 To
     ## 1 Alicia Spinnet     Alicia Spinnet
     ## 2 Alicia Spinnet   Angelina Johnson
     ## 3 Alicia Spinnet       Fred Weasley
