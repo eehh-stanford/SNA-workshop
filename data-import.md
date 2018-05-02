@@ -270,7 +270,7 @@ Now we can proceed as before to remove self-loops and assign attributes.
 
 ### From affiliation data to a network (bipartite networks)
 
-Sometimes networks may be generated from data on the presence or absence of individuals at certain place or time. To convert an affiliation (person by event) matrix to a person-to-person network, simply multiply the affiliation matrix by its transpose. See the [Introduction to igraph](intro-igraph.md) tutorial for an example.
+Sometimes networks may be generated from data on the presence or absence of individuals at certain place or time. Such data should normally be formatted as an affiliation matrix, where individuals appear in the rows and events/places/times in the columns, with values in the cells filled out as appropriate (did the individual attend the event or not). To convert an affiliation (person by event) matrix to a person-to-person network, simply multiply the affiliation matrix by its transpose. See the [Introduction to igraph](intro-igraph.md) tutorial for an example.
 
 Before doing this though, carefully consider what an affiliation matrix means in terms of relationships between persons. Not all group, place, or event affiliations correspond to relationships between persons that are meaningful with respect to your research question.
 
