@@ -2,11 +2,6 @@
 
 -   [Background to the study of social structure](#background-to-the-study-of-social-structure)
 -   [Contextualizing SNA and relational data](#contextualizing-sna-and-relational-data)
--   [Network terminology](#network-terminology)
--   [Different types of networks](#different-types-of-networks)
--   [Basic node measurements](#basic-node-measurements)
--   [Basic network measurements](#basic-network-measurements)
--   [Basic edge measurements](#basic-edge-measurements)
 -   [Network datasets](#network-datasets)
 -   [Network data](#network-data)
     -   [Problems to consider](#problems-to-consider)
@@ -19,7 +14,7 @@ Back to [main page](README.md).
 
 ### Background to the study of social structure
 
-Modern social-network analysis (SNA) has its roots in anthropology, particularly structuralism (Radcliffe-Brown's *On Social Structure*, 1940).
+Social-network analysis (SNA) has a complicated genealogy, but has very clear roots in the tradition of British social anthropology. This can be seen in Radcliffe-Brown's [structural-functionalism](http://www.jstor.org/stable/2844197) and especially the work of the Manchester School ethnographers like [Elizabeth Bott](http://dx.doi.org/10.1177/001872675500800401) and [John Barnes](http://dx.doi.org/10.1177/001872675400700102).
 
 -   Make a scientific study of sociality by generalizing the particular: focus on systems, rather than culture
 -   Social function: how a social behavior is related to the overall structure
@@ -30,7 +25,7 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 
 ### Contextualizing SNA and relational data
 
--   Derived from structural anthropology, but utilized in many fields
+-   Derived from structural-functionalist anthropology, but utilized in many fields
 -   Can measure network structure and/or simulate activity within a network
 -   The SNA endeavor can be highly computational **AND** highly ethnographic
    
@@ -71,54 +66,6 @@ Modern social-network analysis (SNA) has its roots in anthropology, particularly
 </tbody>
 </table>
 
-### Network terminology
-
-Basic terms to get familiar with:
-
--   node/vertex
--   edge/tie
--   graph
-
-![](Fig1.png)
-
-### Different types of networks
-
-![](Fig2.png)
-
-### Basic node measurements
-
-As with non-relational datasets, before building statistical models, you should explore key features of your data.
-
-Sometimes you may only need descriptives of your network---***it depends on your research question!***)
-
-3 important nodal measurements to know and understand are:
-
-1.  Degree
-
-2.  Betweenness
-
-3.  Closeness
-
-### Basic network measurements
-
-**Degree:** The number of contacts of node *n*.
-
-![](intro-SNA_files/figure-markdown_github/unnamed-chunk-3-1.png)
-
-**Betweenness:** The number of shortest paths between any other two nodes that *n* falls on.
-
-![](intro-SNA_files/figure-markdown_github/unnamed-chunk-4-1.png)
-
-**Closeness:** <span style="color:blue"> The inverse of the sum of the shortest paths between *n* and every other node in the network. </span>
-
-![](intro-SNA_files/figure-markdown_github/unnamed-chunk-5-1.png)
-
-### Basic edge measurements
-
--   Weighted edges
--   Positive/negative ties
-
-![](Fig3.png)
 
 
 ### Network datasets
