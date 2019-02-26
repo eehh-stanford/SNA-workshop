@@ -33,8 +33,9 @@ These are the topics we will cover in the workshop:
 
 ## About us
 
-[James Holland Jones](https://people.stanford.edu/jhj1/), Associate Professor, Stanford University
+[James Holland Jones](https://profiles.stanford.edu/james-jones), Associate Professor, Stanford University
 
-[Elspeth Ready](https://elspethr.github.io/), Postdoctoral Research Associate, University of Nebraska-Lincoln
+[Elspeth Ready](https://elspethr.github.io/), Senior Researcher, Department of Human Behavior, Ecology and Culture 
+Max Planck Institute for Evolutionary Anthropology
 
-[Ashley Hazel](https://anthropology.stanford.edu/people/ashley-hazel), Postdoctoral Scholar, Stanford University
+[Ashley Hazel](https://anthropology.stanford.edu/people/ashley-hazel), Research Scientist, Stanford University
