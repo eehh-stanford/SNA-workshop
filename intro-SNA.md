@@ -93,26 +93,27 @@ Social-network analysis (SNA) has a complicated genealogy, but has very clear ro
 
 ### Network data
 
-Let's assume you are going to collect "typical" network data: ego-centric networks
+Let's assume you are going to collect "typical" network data collected in an ethnographic context: ego-centric networks
 
 You'll need to:
 
--   Construct an appropriate set of name-generator questions.
--   Select necessary/elicitable information about the contacts.
--   Get linking information about each contact for ego-network "scale-up."
+-   Construct an appropriate set of name-generator questions
+-   Select necessary/elicitable information about the contacts (i.e., name-interpreter questions)
+-   Elicit alter-alter relationships for ego's alters if you are collecting more than a minimal ego-network
 
 #### Problems to consider
 
 What if:
 
--   You cannot get full names of contacts.
--   Participants don't know much about their contacts.
--   You don't know what kinds of contacts are meaningful.
+-   You cannot get full names of contacts?
+-   Participants don't know much about their contacts?
+-   You don't know what kinds of contacts are meaningful?
 
 #### Setting up surveys
 
--   Network data collection can actually be a fairly messy endeavor.
--   Setting up your surveys to streamline the data prep step will save your sanity.
+-   Network data collection can actually be a fairly messy endeavor
+-   Elicitation of many alters, alter-alter contacts, and name-interpreter data can be very burdensome of subjects (and researchers!)
+-   Setting up your surveys to streamline the data prep step will save your sanity
 -   Different research objectives call for very different set-ups.
 
 Let's look at a couple of examples...
@@ -127,19 +128,20 @@ Let's look at a couple of examples...
 
 ### Ethics and sensitivity
 
--   Relational data presents a special case for field and data-care ethics.
-    -   You might be asking about senstive behaviors (sex, drugs, places they go, power dynamics).
-    -   You are asking participants to talk about other people's behaviors.
-    -   You have to store identifiable information.
--   Thinking like an ethnographer can be useful for improving reliability of responses.
--   Trust participants' ability to understand your research goals.
-    -   **Show and tell** them what you're doing & why.
+-   Relational data present a special case for field and data-care ethics.
+    -   You might be asking about senstive behaviors (sex, drugs, places they go, power dynamics)
+    -   You are asking participants to talk about other people's behaviors
+    -   You have to store identifiable information
+    -   As with spatial data, there is a substantial risk of deductive disclosure with relational data
+-   Thinking like an ethnographer can be useful for improving reliability of responses
+-   Trust participants' ability to understand your research goals
+    -   **Show and tell** them what you're doing & why
 
 ### Cleaning network data (is miserable)
 
 -   From your sureys and fieldnotes, you will need to create:
     -   An edgelist: **A dataset of ties and relationship characteristics**
-    -   A vertexlist: **A dataset of node characteristics**
+    -   A vertexlist: **A dataset of vertex characteristics**
 
 <!---->
 
