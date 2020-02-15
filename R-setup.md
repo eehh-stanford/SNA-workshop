@@ -22,7 +22,7 @@ In addition to R itself, you will require a program in which to edit your R code
 
 If you need more detailed instructions on installing the software, there are many online video tutorials that will walk you through the process.
 
-For Mac users, a recent video tutorial for installing R and RStudio can be found [here](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4).
+For Mac users, a recent video tutorial for installing R and RStudio can be found [here](https://youtu.be/Q4HFdI5oQrk).
 
 For PC users, a recent video tutorial for installing R can be found [here](https://www.youtube.com/watch?v=WzEaFpXVTkk) and one for installing RStudio can be found [here](https://www.youtube.com/watch?v=OtonR6RUgY0).
 
@@ -44,6 +44,8 @@ You'll probably be prompted to choose a mirror again (choose whatever is closest
 The argument `dependencies=TRUE` just means that you'll allow R to also install any packages that the package you're installing needs; `statnet` requires a few additional packages. Download `statnet` over a good internet connection, it is quite large!
 
 Manuals for these packages are available through CRAN ([igraph](https://cran.r-project.org/web/packages/igraph/igraph.pdf) and [statnet](https://cran.r-project.org/web/packages/statnet/statnet.pdf)).
+
+This [video](https://youtu.be/Q4HFdI5oQrk) demonstrates installing these packages using the RStudio Tools menu.
 
 ### Getting started in RStudio
 

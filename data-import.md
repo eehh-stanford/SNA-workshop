@@ -14,7 +14,7 @@ Back to [main page](README.md).
 
 Getting your network data into the right format to analyze it can be a surprisingly difficult task that is not often addressed in social network analysis textbooks and courses. Here we go over some of the basics of formatting and importing network data.
 
-For this tutorial, we use networks of support between Hogwarts students, as coded by [Bossart and Meidert (2013)](http://file.scirp.org/Html/4-2310131_33365.htm). Their data for the first six Harry Potter books are available to download [here](http://www.stats.ox.ac.uk/~snijders/siena/HarryPotterData.html). These unvalued networks contains a directed tie between two Hogwarts students if one student provided verbal support to the other. We've reformatted the data to illustrate a couple different methods for formatting and handling data. Download our version of the [student attribute data](hpindividuals.csv), the [book five edgelist](hp5edgelist.txt), and the [book five sociomatrix](hp5matrix.txt).
+For this tutorial, we use networks of support between Hogwarts students, as coded by [Bossart and Meidert (2013)](http://file.scirp.org/Html/4-2310131_33365.htm). Their data for the first six Harry Potter books are available to download [here](http://www.stats.ox.ac.uk/~snijders/siena/HarryPotterData.html). These unvalued networks contain a directed tie between two Hogwarts students if one student provided verbal support to the other. We've reformatted the data to illustrate a couple different methods for formatting and handling data. Download our version of the [student attribute data](hpindividuals.csv), the [book five edgelist](hp5edgelist.txt), and the [book five sociomatrix](hp5matrix.txt).
 
 We work through concepts and code using `igraph`, then provide code at the end to show how to get the same data into `statnet` using the `intergraph` package. We don't discuss entity resolution or data cleaning at this juncture; here we focus on how to format your data so that you can represent it as a network.
 
@@ -202,7 +202,7 @@ Cool!
 
 ### Sociomatrices
 
-Network data may also be formatted as a **sociomatrix**, which is a square matrix where the rows and columns represent individuals in the network and the cell values represent the ties between them (valued or 0/1 for unvalued). In general, it is impractical to record data in this format. In most cases, trying to record data in a sociomatric means you will be constantly scrambling to add more columns and rows that will be mostly filled with zeroes. Much better to maintain a list of individuals and edges as they appear.
+Network data may also be formatted as a **sociomatrix**, which is a square matrix where the rows and columns represent individuals in the network and the cell values represent the ties between them (valued or 0/1 for unvalued). In general, it is impractical to record data in this format. In most cases, trying to record data in a sociomatric means you will be constantly scrambling to add more columns and rows that will be mostly filled with zeroes. The storage requirements for a sociomatrix increase with the square of the number of observed vertices in your network, even if most of the entries in the sociomatrix are zero (as they typically are for even moderately-sized populations). Much better to maintain a list of individuals and edges as they appear.
 
 Sociomatrices are more useful when there is a non-zero value in most cells (i.e., the data are not sparse). Such is the case when the relationship between nodes involves some kind of distance metric (e.g., physical distance between households or relatedness coefficients). Distance matrices like these are often important covariates of other networks (e.g., relatedness and physical distance often correlate with ties of support between individuals), but you will not usually generate such matrices by hand. Instead, you will likely generate distance matrices in `R` or some other software program using calculations based off other data (e.g., latitude and longitude coordinates).
 
@@ -242,7 +242,7 @@ dim(hp5df) #much better
 
     ## [1] 64 64
 
-Now the data is loaded correctly but we still have a problem. This sociomatrix has dimensions of 64x64, meaning there are 64 students in the network, but from before, we know that only 34 students actually appear in Book 5. This discrepancy is because Bossart and Meidert included all students who appeared in support relationships in ANY of the first six books so that they could do a temporal analysis. I'd prefer just to look at the students who appear in Book 5, so I need to remove these other students.
+Now the data are loaded correctly but we still have a problem. This sociomatrix has dimensions of 64x64, meaning there are 64 students in the network, but from before, we know that only 34 students actually appear in Book 5. This discrepancy is because Bossart and Meidert included all students who appeared in support relationships in ANY of the first six books so that they could do a temporal analysis. I'd prefer just to look at the students who appear in Book 5, so I need to remove these other students.
 
 ``` r
 #start by adding row and column names to our sociomatrix
@@ -270,7 +270,7 @@ Now we can proceed as before to remove self-loops and assign attributes.
 
 ### From affiliation data to a network (bipartite networks)
 
-Sometimes networks may be generated from data on the presence or absence of individuals at certain place or time. Such data should normally be formatted as an affiliation matrix, where individuals appear in the rows and events/places/times in the columns, with values in the cells filled out as appropriate (did the individual attend the event or not). To convert an affiliation (person by event) matrix to a person-to-person network, simply multiply the affiliation matrix by its transpose. See the [Introduction to igraph](intro-igraph.md) tutorial for an example.
+Sometimes networks may be generated from data on the presence or absence of individuals at certain place or time. Such data should normally be formatted as an affiliation matrix, where individuals appear in the rows and events/places/times in the columns, with values in the cells filled out as appropriate (did the individual attend the event or not). To convert an affiliation (person-by-event) matrix to a person-to-person network, simply multiply the affiliation matrix by its transpose. See the [Introduction to igraph](intro-igraph.md) tutorial for an example.
 
 Before doing this though, carefully consider what an affiliation matrix means in terms of relationships between persons. Not all group, place, or event affiliations correspond to relationships between persons that are meaningful with respect to your research question.
 

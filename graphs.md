@@ -628,7 +628,7 @@ infocentral <- function(X){
 }
 ```
 
-**Eigenvalue Centrality**
+**Bonacich Centrality**
 
 Yet another approach to centrality was suggested by Bonacich (1972). He suggests that the eigenvectors of the sociomatrix are a fruitful way of thinking about centrality. As with information centrality, the eigenvector approach captures the idea that central people will have well-connected alters but that the relative importance of these alters falls off with distance from ego. While the eigenvector (preferably the dominant one) of the sociomatrix is an excellent measure of centrality, the metric Bonacich (1987) suggests is actually a bit more complex:
 
