@@ -75,7 +75,7 @@ using the `igraph` function `sample_degseq()`.
     g <- sample_degseq(deg, method="simple")
     plot(g, vertex.size=5, vertex.label=NA, vertex.color="skyblue2")
 
-![](netsample_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](netsample_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 We get a network with a large, strongly-connected component and quite a
 few isolates. Now we pick a random sample of vertices of our graph.
@@ -85,7 +85,7 @@ few isolates. Now we pick a random sample of vertices of our graph.
     sg <- simplify(sg)
     plot(sg, vertex.size=5, vertex.label=NA, vertex.color="skyblue2")
 
-![](netsample_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](netsample_files/figure-markdown_github/unnamed-chunk-2-1.png)
 
 Note that this is not simply a result of taking a small sample of our
 graph. If we choose correctly, we can recreate a strongly-connected
@@ -96,7 +96,7 @@ induced subgraph:
     sg1 <- simplify(sg1)
     plot(sg1, vertex.size=5, vertex.label=NA, vertex.color="skyblue2")
 
-![](netsample_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](netsample_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 It’s a bit abstract, but it shouldn’t be too difficult to convince
 yourself that we could represent the number of potential secondary
